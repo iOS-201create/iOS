@@ -12,13 +12,30 @@
 		78F317F05B6D2F035914518F /* Pods_iOS_201Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */; };
 		E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A32AE686A900141952 /* AppDelegate.swift */; };
 		E16C92A62AE686A900141952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A52AE686A900141952 /* SceneDelegate.swift */; };
-		E16C92A82AE686A900141952 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A72AE686A900141952 /* MainViewController.swift */; };
 		E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E16C92AC2AE686A900141952 /* iOS_201.xcdatamodeld */; };
 		E16C92B02AE686AA00141952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16C92AF2AE686AA00141952 /* Assets.xcassets */; };
 		E16C92B32AE686AA00141952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16C92B12AE686AA00141952 /* LaunchScreen.storyboard */; };
 		E16C92BE2AE686AA00141952 /* iOS_201Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92BD2AE686AA00141952 /* iOS_201Tests.swift */; };
 		E16C92C82AE686AA00141952 /* iOS_201UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92C72AE686AA00141952 /* iOS_201UITests.swift */; };
 		E16C92CA2AE686AA00141952 /* iOS_201UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92C92AE686AA00141952 /* iOS_201UITestsLaunchTests.swift */; };
+		E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */; };
+		E1799BE82AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */; };
+		E1799BE92AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */; };
+		E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BEC2AF4B72C00A69A33 /* UIColor.swift */; };
+		E1799BEE2AF4B72C00A69A33 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BEC2AF4B72C00A69A33 /* UIColor.swift */; };
+		E1799BEF2AF4B72C00A69A33 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BEC2AF4B72C00A69A33 /* UIColor.swift */; };
+		E1799BF52AF4BB0000A69A33 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BF42AF4BB0000A69A33 /* HomeViewController.swift */; };
+		E1799BF62AF4BB0000A69A33 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BF42AF4BB0000A69A33 /* HomeViewController.swift */; };
+		E1799BF72AF4BB0000A69A33 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BF42AF4BB0000A69A33 /* HomeViewController.swift */; };
+		E1799BF92AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */; };
+		E1799BFA2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */; };
+		E1799BFB2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */; };
+		E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */; };
+		E1799BFE2AF4BB2900A69A33 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */; };
+		E1799BFF2AF4BB2900A69A33 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */; };
+		E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
+		E1799C022AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
+		E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +66,6 @@
 		E16C92A02AE686A900141952 /* iOS_201.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_201.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16C92A32AE686A900141952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E16C92A52AE686A900141952 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E16C92A72AE686A900141952 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E16C92AD2AE686A900141952 /* iOS_201.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_201.xcdatamodel; sourceTree = "<group>"; };
 		E16C92AF2AE686AA00141952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E16C92B22AE686AA00141952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +75,12 @@
 		E16C92C32AE686AA00141952 /* iOS_201UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_201UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16C92C72AE686AA00141952 /* iOS_201UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_201UITests.swift; sourceTree = "<group>"; };
 		E16C92C92AE686AA00141952 /* iOS_201UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_201UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		E1799BEC2AF4B72C00A69A33 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E1799BF42AF4BB0000A69A33 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewController.swift; sourceTree = "<group>"; };
+		E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		E1799C002AF4BB3300A69A33 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		F1A54D5350CB8A12B6C05209 /* Pods_iOS_201.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,11 +161,14 @@
 		E16C92A22AE686A900141952 /* iOS_201 */ = {
 			isa = PBXGroup;
 			children = (
-				E16D5C642AF10BFF00D19882 /* Resources */,
-				E16C92A32AE686A900141952 /* AppDelegate.swift */,
-				E16C92A52AE686A900141952 /* SceneDelegate.swift */,
-				E16C92A72AE686A900141952 /* MainViewController.swift */,
 				E16C92B42AE686AA00141952 /* Info.plist */,
+				E16D5C642AF10BFF00D19882 /* Resources */,
+				E1799BEB2AF4B71F00A69A33 /* Extension */,
+				E1799BE52AF4ADAA00A69A33 /* Custom */,
+				E1799BF02AF4BAC900A69A33 /* Home */,
+				E1799BF12AF4BACE00A69A33 /* StudyList */,
+				E1799BF22AF4BAD300A69A33 /* Message */,
+				E1799BF32AF4BADF00A69A33 /* MyPage */,
 			);
 			path = iOS_201;
 			sourceTree = "<group>";
@@ -168,11 +193,61 @@
 		E16D5C642AF10BFF00D19882 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E16C92A32AE686A900141952 /* AppDelegate.swift */,
+				E16C92A52AE686A900141952 /* SceneDelegate.swift */,
 				E16C92AF2AE686AA00141952 /* Assets.xcassets */,
 				E16C92B12AE686AA00141952 /* LaunchScreen.storyboard */,
 				E16C92AC2AE686A900141952 /* iOS_201.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1799BE52AF4ADAA00A69A33 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		E1799BEB2AF4B71F00A69A33 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BEC2AF4B72C00A69A33 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E1799BF02AF4BAC900A69A33 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BF42AF4BB0000A69A33 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E1799BF12AF4BACE00A69A33 /* StudyList */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */,
+			);
+			path = StudyList;
+			sourceTree = "<group>";
+		};
+		E1799BF22AF4BAD300A69A33 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E1799C002AF4BB3300A69A33 /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		E1799BF32AF4BADF00A69A33 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,9 +488,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E16C92A82AE686A900141952 /* MainViewController.swift in Sources */,
+				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
+				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
+				E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
+				E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
+				E1799BF92AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */,
+				E1799BF52AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
 				E16C92A62AE686A900141952 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +504,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1799BE82AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
+				E1799BEE2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E16C92BE2AE686AA00141952 /* iOS_201Tests.swift in Sources */,
+				E1799BFE2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
+				E1799BFA2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
+				E1799BF62AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
+				E1799C022AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,8 +518,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1799BF72AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
 				E16C92CA2AE686AA00141952 /* iOS_201UITestsLaunchTests.swift in Sources */,
+				E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
+				E1799BFF2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
+				E1799BEF2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E16C92C82AE686AA00141952 /* iOS_201UITests.swift in Sources */,
+				E1799BFB2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
+				E1799BE92AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
