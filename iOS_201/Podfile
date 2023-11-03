@@ -10,11 +10,13 @@ target 'iOS_201' do
   pod 'Kingfisher', '~> 7.0'
   target 'iOS_201Tests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Alamofire'
+    pod 'Kingfisher', '~> 7.0'
   end
 
   target 'iOS_201UITests' do
-    # Pods for testing
+    pod 'Alamofire'
+    pod 'Kingfisher', '~> 7.0'
   end
 
 end

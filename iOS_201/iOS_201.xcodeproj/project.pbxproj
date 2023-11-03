@@ -732,7 +732,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0346F03350D434D946FA38FE /* Pods-iOS_201Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -753,7 +753,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39EF6BB4D54E0FB04FC8C006 /* Pods-iOS_201Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -774,7 +774,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48AAC6B30D58FBD096902EE7 /* Pods-iOS_201-iOS_201UITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
@@ -794,7 +794,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 96DCA3DBA451A66C118DE80E /* Pods-iOS_201-iOS_201UITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
