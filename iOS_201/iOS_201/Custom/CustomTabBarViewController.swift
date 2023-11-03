@@ -9,7 +9,6 @@ import UIKit
 
 class CustomTabBarViewController: UITabBarController {
 
-    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -51,6 +50,7 @@ class CustomTabBarViewController: UITabBarController {
         return UINavigationController(rootViewController: VC)
 
     }
+    
     private func createMyPageTab() -> UINavigationController{
         let item = configureTabBarItemTitle(title: "마이페이지", imageName: "myPageTab")
         let VC = MypageViewController()
@@ -69,10 +69,6 @@ class CustomTabBarViewController: UITabBarController {
     //MARK: - TabBarViewController Methods
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        guard let itemIndex = tabBar.items?.firstIndex(of: item)?.distance(to: 0) else {return}
-        let index = -itemIndex
-        let icon = tabBar.subviews[index+1].subviews.last as? UIImageView
-        item.image?.ciImage?.transformed(by: CGAffineTransform(rotationAngle: 0.5))
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
 }
