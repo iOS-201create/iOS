@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
         config.imagePadding = 57
         config.contentInsets = .init(top: 14, leading: 24, bottom: 14, trailing: 105)
         
-        
         button.tintColor = .white
         button.layer.cornerRadius = 12
         button.backgroundColor = .black02
@@ -92,7 +91,7 @@ extension LoginViewController {
 //struct loginViewController : UIViewControllerRepresentable {
 //    // update
 //    func updateUIViewController(_ uiViewController: UIViewController, context: Context){
-//        
+//
 //    }
 //    // makeui
 //    @available(iOS 13.0, *)
