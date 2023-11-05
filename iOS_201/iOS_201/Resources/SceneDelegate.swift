@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let mainViewController = CustomTabBarViewController()
+//        let mainViewController = CustomTabBarViewController()
+        let mainViewController = LoginViewController()
         window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
     }
@@ -54,6 +55,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+           if let url = URLContexts.first?.url {
+               if url.absoluteString.starts(with: "ios-201://") {
+                   if let code = url.absoluteString.split(separator: "=").last.map({ String($0) }) {
+                       AuthService.share.requestAccessToken(with: code)
+                   }
+               }
+           }
+       }
 
 }
 

@@ -4,13 +4,15 @@
 //
 //  Created by Hyeonho on 11/4/23.
 //
-
+import Combine
 import Foundation
 import UIKit
 
 import SnapKit
 
 class LoginViewController: UIViewController {
+    
+    let viewmodel = LoginViewModel()
     
     private let titleImage = {
         let imageview = UIImageView(image: UIImage(named: "loginTitle"))
@@ -26,7 +28,7 @@ class LoginViewController: UIViewController {
         return stackview
     }()
     
-    private let btn_Github = {
+    private lazy var btn_Github: UIButton = {
         let button = UIButton()
         
         var config = UIButton.Configuration.plain()
@@ -42,7 +44,7 @@ class LoginViewController: UIViewController {
         button.layer.borderWidth = 1
         button.configuration = config
         button.layer.borderColor = UIColor(named: "black03")?.cgColor
-        
+        button.addTarget(viewmodel, action: #selector(viewmodel.fetchCodeToGithub), for: .touchUpInside)
         return button
     }()
     
