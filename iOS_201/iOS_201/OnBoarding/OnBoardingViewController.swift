@@ -248,7 +248,7 @@ extension OnBoardingViewController {
     }
 }
 
-//MARK: - Notification
+//MARK: Notification
 
 extension OnBoardingViewController {
     
