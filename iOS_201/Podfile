@@ -8,15 +8,19 @@ target 'iOS_201' do
   # Pods for iOS_201
   pod 'Alamofire'
   pod 'Kingfisher', '~> 7.0'
+  pod 'SnapKit'
+  
   target 'iOS_201Tests' do
     inherit! :search_paths
     pod 'Alamofire'
     pod 'Kingfisher', '~> 7.0'
+    pod 'SnapKit'
   end
 
   target 'iOS_201UITests' do
     pod 'Alamofire'
     pod 'Kingfisher', '~> 7.0'
+    pod 'SnapKit'
   end
 
 end

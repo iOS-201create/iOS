@@ -10,6 +10,15 @@
 		1AE1E41B0383BF6663752C79 /* Pods_iOS_201.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A54D5350CB8A12B6C05209 /* Pods_iOS_201.framework */; };
 		74826A81EBBDCFD90B4CE793 /* Pods_iOS_201_iOS_201UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D289F5E609236BA7C97AC6 /* Pods_iOS_201_iOS_201UITests.framework */; };
 		78F317F05B6D2F035914518F /* Pods_iOS_201Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */; };
+		E1598CEF2AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
+		E1598CF02AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
+		E1598CF12AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
+		E1598CF32AF78C3400677F45 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF22AF78C3400677F45 /* UIViewController.swift */; };
+		E1598CF42AF78C3400677F45 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF22AF78C3400677F45 /* UIViewController.swift */; };
+		E1598CF52AF78C3400677F45 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF22AF78C3400677F45 /* UIViewController.swift */; };
+		E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */; };
+		E1598CF82AF7935500677F45 /* LodingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */; };
+		E1598CF92AF7935500677F45 /* LodingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */; };
 		E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A32AE686A900141952 /* AppDelegate.swift */; };
 		E16C92A62AE686A900141952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A52AE686A900141952 /* SceneDelegate.swift */; };
 		E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E16C92AC2AE686A900141952 /* iOS_201.xcdatamodeld */; };
@@ -36,6 +45,17 @@
 		E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
 		E1799C022AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
 		E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
+		E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE192AF6418C00B02823 /* StudyListModel.swift */; };
+		E1D5CE1B2AF6418C00B02823 /* StudyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE192AF6418C00B02823 /* StudyListModel.swift */; };
+		E1D5CE1C2AF6418C00B02823 /* StudyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE192AF6418C00B02823 /* StudyListModel.swift */; };
+		E1D5CE1E2AF6480200B02823 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */; };
+		E1D5CE1F2AF6480200B02823 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */; };
+		E1D5CE202AF6480200B02823 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */; };
+		E1D5CE222AF64D3000B02823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16C92AF2AE686AA00141952 /* Assets.xcassets */; };
+		E1D5CE232AF64D3100B02823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16C92AF2AE686AA00141952 /* Assets.xcassets */; };
+		E1D5CE262AF669F000B02823 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */; };
+		E1D5CE272AF669F000B02823 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */; };
+		E1D5CE282AF669F000B02823 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +83,9 @@
 		AF548CE4AD6EE95C0AAE6A10 /* Pods-iOS_201.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201.release.xcconfig"; path = "Target Support Files/Pods-iOS_201/Pods-iOS_201.release.xcconfig"; sourceTree = "<group>"; };
 		BF0B86635ABBA38B6234E0CA /* Pods-iOS_201.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201.debug.xcconfig"; path = "Target Support Files/Pods-iOS_201/Pods-iOS_201.debug.xcconfig"; sourceTree = "<group>"; };
 		C9D289F5E609236BA7C97AC6 /* Pods_iOS_201_iOS_201UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201_iOS_201UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewModel.swift; sourceTree = "<group>"; };
+		E1598CF22AF78C3400677F45 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingTableViewCell.swift; sourceTree = "<group>"; };
 		E16C92A02AE686A900141952 /* iOS_201.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_201.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16C92A32AE686A900141952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E16C92A52AE686A900141952 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +104,9 @@
 		E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewController.swift; sourceTree = "<group>"; };
 		E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		E1799C002AF4BB3300A69A33 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		E1D5CE192AF6418C00B02823 /* StudyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListModel.swift; sourceTree = "<group>"; };
+		E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
 		F1A54D5350CB8A12B6C05209 /* Pods_iOS_201.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */,
+				E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -214,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				E1799BEC2AF4B72C00A69A33 /* UIColor.swift */,
+				E1598CF22AF78C3400677F45 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -229,7 +257,9 @@
 		E1799BF12AF4BACE00A69A33 /* StudyList */ = {
 			isa = PBXGroup;
 			children = (
-				E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */,
+				E1D5CE182AF6416B00B02823 /* ViewModel */,
+				E1D5CE172AF6416900B02823 /* Model */,
+				E1D5CE162AF6416600B02823 /* View */,
 			);
 			path = StudyList;
 			sourceTree = "<group>";
@@ -248,6 +278,32 @@
 				E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		E1D5CE162AF6416600B02823 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */,
+				E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */,
+				E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1D5CE172AF6416900B02823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1D5CE192AF6418C00B02823 /* StudyListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1D5CE182AF6416B00B02823 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +336,7 @@
 				E16C92B52AE686AA00141952 /* Sources */,
 				E16C92B62AE686AA00141952 /* Frameworks */,
 				E16C92B72AE686AA00141952 /* Resources */,
+				F8C7E115C50B1B07AFE1573D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -368,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D5CE222AF64D3000B02823 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D5CE232AF64D3100B02823 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +523,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F8C7E115C50B1B07AFE1573D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FB653E119F725974DBAB2FDF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,15 +564,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1598CEF2AF776A400677F45 /* StudyListViewModel.swift in Sources */,
+				E1D5CE1E2AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
 				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
+				E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
+				E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
 				E1799BF92AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */,
 				E1799BF52AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
+				E1D5CE262AF669F000B02823 /* StudyTableViewCell.swift in Sources */,
 				E16C92A62AE686A900141952 /* SceneDelegate.swift in Sources */,
+				E1598CF32AF78C3400677F45 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,11 +586,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D5CE1B2AF6418C00B02823 /* StudyListModel.swift in Sources */,
+				E1D5CE272AF669F000B02823 /* StudyTableViewCell.swift in Sources */,
 				E1799BE82AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				E1799BEE2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E16C92BE2AE686AA00141952 /* iOS_201Tests.swift in Sources */,
+				E1D5CE1F2AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
+				E1598CF82AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E1799BFE2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
+				E1598CF42AF78C3400677F45 /* UIViewController.swift in Sources */,
 				E1799BFA2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
+				E1598CF02AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1799BF62AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
 				E1799C022AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 			);
@@ -518,14 +606,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1598CF52AF78C3400677F45 /* UIViewController.swift in Sources */,
+				E1D5CE202AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
 				E1799BF72AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
 				E16C92CA2AE686AA00141952 /* iOS_201UITestsLaunchTests.swift in Sources */,
+				E1598CF12AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 				E1799BFF2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				E1799BEF2AF4B72C00A69A33 /* UIColor.swift in Sources */,
+				E1598CF92AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E16C92C82AE686AA00141952 /* iOS_201UITests.swift in Sources */,
 				E1799BFB2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
+				E1D5CE1C2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E1799BE92AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
+				E1D5CE282AF669F000B02823 /* StudyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +777,7 @@
 				INFOPLIST_FILE = iOS_201/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -712,6 +807,7 @@
 				INFOPLIST_FILE = iOS_201/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
