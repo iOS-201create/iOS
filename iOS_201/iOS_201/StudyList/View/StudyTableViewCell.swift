@@ -10,11 +10,12 @@ import SnapKit
 
 class StudyTableViewCell: UITableViewCell {
 
-    // MARK: - Properties
+    //MARK: - Properties
     
     let containerView = UIView()
     
     //MARK: - Initializer
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.backgroundColor = .black01
@@ -33,7 +34,6 @@ class StudyTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     //MARK: - Configure UI
@@ -59,7 +59,7 @@ class StudyTableViewCell: UITableViewCell {
         }
         
         let tagLabel = UILabel()
-        tagLabel.text = "모집중"
+        tagLabel.text = getTagText(value: data.processingStatus!)
         tagLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         tagLabel.textColor = UIColor(red: 0.478, green: 0.863, blue: 0.294, alpha: 1)
         
@@ -67,6 +67,13 @@ class StudyTableViewCell: UITableViewCell {
         tagLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
+    }
+    
+    //TODO: - 모집중 태그 -> Dynamic하게 수정 필요함
+    func getTagText(value: Int) -> String{
+        if value == 0 { return "모집중" }
+        else if value == 1 { return "진행중"}
+        else { return "???"}
     }
     
     private func configureContainerView(){
@@ -93,11 +100,15 @@ class StudyTableViewCell: UITableViewCell {
             make.top.equalToSuperview().offset(22)
             make.bottom.equalToSuperview().inset(38)
         }
+        configureTierLabel(tierImageView)
+    }
+    
+    private func configureTierLabel(_ tierImageView: UIImageView){
         let tierLabel = UILabel()
         containerView.addSubview(tierLabel)
         tierLabel.text = "평균티어"
         tierLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        tierLabel.textColor = UIColor(red: 0.475, green: 0.498, blue: 0.541, alpha: 1)
+        tierLabel.textColor = UIColor(hexCode: "797F8A")
         tierLabel.snp.makeConstraints { make in
             make.centerX.equalTo(tierImageView.snp.centerX)
             make.top.equalTo(tierImageView.snp.bottom).offset(5)
@@ -142,11 +153,9 @@ class StudyTableViewCell: UITableViewCell {
     private func numOfPeopleLabel(numOfPeople: String){
         let numOfPeopleLabel = UILabel()
         numOfPeopleLabel.text = numOfPeople
-        numOfPeopleLabel.textAlignment = .left
         numOfPeopleLabel.textColor = UIColor(red: 0.502, green: 0.522, blue: 0.561, alpha: 1)
         numOfPeopleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         containerView.addSubview(numOfPeopleLabel)
-        
         numOfPeopleLabel.snp.makeConstraints { make in
             make.width.equalTo(28)
             make.trailing.equalToSuperview().inset(13)
@@ -164,6 +173,41 @@ class StudyTableViewCell: UITableViewCell {
 //    "name": "자바 스프링 잘하는법",
 //    "averageTier": 2,
 //    "createdAt": "2023-11-05",
+//    "numberOfCurrentMembers": 6,
+//    "numberOfMaximumMembers": 6,
+//    "meetingDaysPerWeek": 2,
+//    "minimumWeeks": 8
+//  }
+//]
+
+
+// -> study/wating REQEUST
+//쿼리는 page, search, 똑같음
+//쿼리 role -> MASTER, STUDY_MEMBER, APPLICANT, NO_ROLE
+
+
+//"createdAt": "2023-11-07T01:19:34.040Z",
+//"updatedAt": "2023-11-07T01:19:34.040Z",
+//"id": 0,
+//"githubId": "string",
+//"nickname": "string",
+//"profileImageUrl": "string",
+//"experience": 0,
+//"introduction": "string",
+//"deleted": true,
+//"tier": "BRONZE",
+//"onboardingDone": true
+//}
+
+
+//response
+//[
+//  {
+//    "id": 2,
+//    "processingStatus": 1,
+//    "name": "자바 스프링 잘하는법",
+//    "averageTier": 2,
+//    "createdAt": "2023-11-07",
 //    "numberOfCurrentMembers": 6,
 //    "numberOfMaximumMembers": 6,
 //    "meetingDaysPerWeek": 2,

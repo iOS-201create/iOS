@@ -56,6 +56,9 @@
 		E1D5CE262AF669F000B02823 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */; };
 		E1D5CE272AF669F000B02823 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */; };
 		E1D5CE282AF669F000B02823 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */; };
+		E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F73B352AFA227F00C33DAF /* FilterCollectionViewCell.swift */; };
+		E1F73B372AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F73B352AFA227F00C33DAF /* FilterCollectionViewCell.swift */; };
+		E1F73B382AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F73B352AFA227F00C33DAF /* FilterCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,7 @@
 		E1D5CE192AF6418C00B02823 /* StudyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListModel.swift; sourceTree = "<group>"; };
 		E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
+		E1F73B352AFA227F00C33DAF /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		F1A54D5350CB8A12B6C05209 /* Pods_iOS_201.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -286,6 +290,7 @@
 				E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */,
 				E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */,
 				E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */,
+				E1F73B352AFA227F00C33DAF /* FilterCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -570,6 +575,7 @@
 				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */,
+				E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
@@ -592,6 +598,7 @@
 				E1799BEE2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E16C92BE2AE686AA00141952 /* iOS_201Tests.swift in Sources */,
 				E1D5CE1F2AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
+				E1F73B372AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				E1598CF82AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E1799BFE2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				E1598CF42AF78C3400677F45 /* UIViewController.swift in Sources */,
@@ -616,6 +623,7 @@
 				E1799BEF2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E1598CF92AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E16C92C82AE686AA00141952 /* iOS_201UITests.swift in Sources */,
+				E1F73B382AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				E1799BFB2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E1D5CE1C2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E1799BE92AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
