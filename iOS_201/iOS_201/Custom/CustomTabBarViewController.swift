@@ -24,6 +24,7 @@ class CustomTabBarViewController: UITabBarController {
         UITabBar.appearance().backgroundColor = .black02
         tabBar.isTranslucent = false
         setViewControllers([createHomeTab(), createStudyListTab(), createMessageTab(), createMyPageTab()], animated: true)
+        selectedIndex = 1
     }
     
     // MARK: - Set TabBar's ViewControllers

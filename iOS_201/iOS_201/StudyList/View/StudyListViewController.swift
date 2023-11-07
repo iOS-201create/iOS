@@ -10,16 +10,31 @@ import SnapKit
 
 class StudyListViewController: UIViewController {
     
+    typealias FilterType        = FilterCollectionViewCell.filterType
+    
     //MARK: - Properties
     
-    let viewModel = StudyListViewModel()
-    var isPaging = false
+    let viewModel               = StudyListViewModel()
+    var filterCells             = [FilterCollectionViewCell]()
+    var isPaging                = false
+    var nowFilter: FilterType   = .all
     
-    let tableView: UITableView = {
+    let tableView: UITableView  = {
         let tv = UITableView()
         tv.separatorStyle = .none
         tv.backgroundColor = .black01
         return tv
+    }()
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        cv.collectionViewLayout = layout
+        cv.backgroundColor = .black01
+        cv.showsHorizontalScrollIndicator = false
+        return cv
     }()
     
     //MARK: - View Life Cycle
@@ -28,7 +43,7 @@ class StudyListViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black01
         configureNavigationBar(title: "스터디 목록")
-        self.configureFilterView()
+        self.configureFilterCollectionView()
         viewModel.requestData(isPaging: false) {
             self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
@@ -40,14 +55,7 @@ class StudyListViewController: UIViewController {
         super.viewDidAppear(true)
     }
     
-    private func fetchNextPage(){
-        self.isPaging = true
-        self.tableView.reloadSections(IndexSet(integer: 1), with: .none)
-        self.viewModel.requestData(isPaging: true){
-            self.isPaging = false
-            self.tableView.reloadData()
-        }
-    }
+    //MARK: - Configure UI
     
     private func configureTableView(){
         tableView.delegate = self
@@ -91,40 +99,34 @@ class StudyListViewController: UIViewController {
         }
     }
     
-
-    // TODO: - 디자인 가이드 잘못되었음, CollectionView로 교체 필요
-    private func configureFilterView(){
-        let filterStackView = UIStackView()
-        filterStackView.axis = .horizontal
-        filterStackView.distribution = .equalSpacing
-        ["전체", "모집중", "진행중", "수락 대기중"].forEach {
-            let label = UILabel()
-            label.text = $0 
-            label.textColor = .white
-            label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-            let view = UIView()
-            view.layer.borderWidth = 1.0
-            view.layer.cornerRadius = 10
-            view.backgroundColor = .black02
-            view.layer.borderColor = UIColor.black03?.cgColor
-            view.addSubview(label)
-            label.snp.makeConstraints { make in
-                make.centerX.centerY.equalToSuperview()
-            }
-            view.snp.makeConstraints { make in
-                make.width.equalTo(label.intrinsicContentSize.width + 25.0)
-            }
-            filterStackView.addArrangedSubview(view)
-        }
-        self.view.addSubview(filterStackView)
-        filterStackView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(54)
-            make.leading.equalToSuperview().offset(10)
-            make.width.equalTo(275)
-            make.height.equalTo(30)
+    private func configureFilterCollectionView(){
+        collectionView.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: "filterCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(44)
+            make.leading.trailing.equalToSuperview().offset(10)
+            make.height.equalTo(50)
         }
     }
     
+    //MARK: - Request Data From ViewModel
+    private func setFilterAndFetchData(filterType: FilterType){
+        viewModel.setFilter(filterType: filterType)
+        viewModel.requestData(isPaging: false) {
+            self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        }
+    }
+    
+    private func fetchNextPage(){
+        self.isPaging = true
+        self.tableView.reloadSections(IndexSet(integer: 1), with: .none) // Loading cell ui update
+        self.viewModel.requestData(isPaging: true){
+            self.isPaging = false
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension StudyListViewController: UITableViewDelegate, UITableViewDataSource{
@@ -135,6 +137,7 @@ extension StudyListViewController: UITableViewDelegate, UITableViewDataSource{
         return 2
     }
     
+    /// section 0: 스터디 목록 , section 1: 로딩 셀 (페이징 과정 진행시)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return self.viewModel.dataSource.count
@@ -157,6 +160,7 @@ extension StudyListViewController: UITableViewDelegate, UITableViewDataSource{
     
     // MARK: - TableView Delegate
     
+    /// 페이징 처리를 위한 메서드
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -170,5 +174,30 @@ extension StudyListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension StudyListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - TableView Delegate
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.filterCellTitle.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filterCell", for: indexPath) as! FilterCollectionViewCell
+        cell.configureCell(row: indexPath.row, title: viewModel.filterCellTitle[indexPath.row])
+        filterCells.append(cell)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! FilterCollectionViewCell
+        setFilterAndFetchData(filterType: FilterType(rawValue: indexPath.row)!)
+        filterCells.forEach {
+            $0.filterInactivate()
+        }
+        cell.filterActivate()
     }
 }
