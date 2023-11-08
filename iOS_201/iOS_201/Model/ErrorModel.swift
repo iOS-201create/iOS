@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ErrorModel: Codable, Error {
+    let error : String?
+    let status_code : Int?
+}
