@@ -14,6 +14,10 @@ class LoginViewController: UIViewController {
     
     let viewmodel = LoginViewModel()
     
+    var cancellable = Set<AnyCancellable>()
+    
+    var input: PassthroughSubject<LoginViewModel.Input, Never> = .init()
+    
     private let titleImage = {
         let imageview = UIImageView(image: UIImage(named: "loginTitle"))
         imageview.contentMode = .scaleAspectFit
@@ -28,7 +32,7 @@ class LoginViewController: UIViewController {
         return stackview
     }()
     
-    private lazy var btn_Github: UIButton = {
+    private lazy var githubBtn: UIButton = {
         let button = UIButton()
         
         var config = UIButton.Configuration.plain()
@@ -44,11 +48,10 @@ class LoginViewController: UIViewController {
         button.layer.borderWidth = 1
         button.configuration = config
         button.layer.borderColor = UIColor(named: "black03")?.cgColor
-        button.addTarget(viewmodel, action: #selector(viewmodel.fetchCodeToGithub), for: .touchUpInside)
         return button
     }()
     
-    private let btn_AnounceMent = {
+    private let anouncementBtn = {
         let button = UIButton()
         button.setTitle("비회원으로 둘러보기", for: .normal)
         button.setTitleColor(.gray, for: .normal)
@@ -61,17 +64,18 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .black
         addView()
         setLayout()
+        bind()
     }
 }
 
-// MARK: layout
+//MARK: - layout
 
 extension LoginViewController {
     func addView() {
         view.addSubview(titleImage)
         view.addSubview(stackView)
-        stackView.addArrangedSubview(btn_Github)
-        stackView.addArrangedSubview(btn_AnounceMent)
+        stackView.addArrangedSubview(githubBtn)
+        stackView.addArrangedSubview(anouncementBtn)
     }
     
     func setLayout() {
@@ -87,28 +91,31 @@ extension LoginViewController {
     }
 }
 
-// MARK: preview
-//
-//#if DEBUG
-//struct loginViewController : UIViewControllerRepresentable {
-//    // update
-//    func updateUIViewController(_ uiViewController: UIViewController, context: Context){
-//
-//    }
-//    // makeui
-//    @available(iOS 13.0, *)
-//    func makeUIViewController(context: Context) -> UIViewController {
-//        LoginViewController()
-//    }
-//}
-//@available(iOS 13.0, *)
-//struct mainVC_Previews: PreviewProvider {
-//    static var previews: some View{
-//        Group{
-//            loginViewController()
-//                .ignoresSafeArea(.all)//미리보기의 safeArea 이외의 부분도 채워서 보여주게됌.
-//                .previewDisplayName("iphone 11")
-//        }
-//    }
-//}
-//#endif
+//MARK: - bind
+
+extension LoginViewController {
+    func bind() {
+        // 깃헙 로그인
+        githubBtn.tapPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { self.input.send(.tabGithubLogin) }
+            .store(in: &cancellable)
+        
+        //비회원 로그인
+        
+        //애플 로그인
+        
+        let output = viewmodel.transform(input: input.eraseToAnyPublisher())
+        output
+            .receive(on: RunLoop.main)
+            .sink { event in
+                switch event {
+                case .requestCodeFail:
+                    print("차후 AlterView 로 인증실패 알림")
+                case .requestCodeSuccess:
+                    print("화면이동")
+                }
+            }
+            .store(in: &cancellable)
+    }
+}
