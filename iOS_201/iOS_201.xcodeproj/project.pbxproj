@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		002095552AF7435A00B02DE4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002095542AF7435A00B02DE4 /* LoginViewModel.swift */; };
 		002095582AF74C4900B02DE4 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002095572AF74C4900B02DE4 /* AuthModel.swift */; };
+		002095632AF77A2700B02DE4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002095622AF77A2700B02DE4 /* AppCoordinator.swift */; };
+		002095652AF77AD700B02DE4 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002095642AF77AD700B02DE4 /* OnBoardingViewModel.swift */; };
+		002095672AF77E1200B02DE4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002095662AF77E1200B02DE4 /* UserService.swift */; };
+		002095692AF7805800B02DE4 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002095682AF7805800B02DE4 /* ErrorModel.swift */; };
+		0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956A2AF7849200B02DE4 /* NicknameModel.swift */; };
+		0020956D2AF786E200B02DE4 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956C2AF786E200B02DE4 /* OnBoardingModel.swift */; };
+		0020956F2AF78BDF00B02DE4 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956E2AF78BDF00B02DE4 /* UITextField.swift */; };
+		00335E302AFAFF9C00FF742E /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00335E2F2AFAFF9C00FF742E /* AppViewModel.swift */; };
+		003DB96B2AF9EDFC00903AF8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003DB96A2AF9EDFC00903AF8 /* UIButton.swift */; };
 		00A10AA62AF650CD009DF4BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA52AF650CD009DF4BC /* LoginViewController.swift */; };
 		00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA92AF65947009DF4BC /* UIImage.swift */; };
 		00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AAC2AF66B2C009DF4BC /* OnBoardingViewController.swift */; };
 		00A10AB22AF6ED8A009DF4BC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AB12AF6ED8A009DF4BC /* AuthService.swift */; };
+		00C7846A2AF90D2A00A0FFA7 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C784692AF90D2A00A0FFA7 /* UITextView.swift */; };
 		1AE1E41B0383BF6663752C79 /* Pods_iOS_201.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A54D5350CB8A12B6C05209 /* Pods_iOS_201.framework */; };
 		74826A81EBBDCFD90B4CE793 /* Pods_iOS_201_iOS_201UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D289F5E609236BA7C97AC6 /* Pods_iOS_201_iOS_201UITests.framework */; };
 		78F317F05B6D2F035914518F /* Pods_iOS_201Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */; };
@@ -64,10 +74,20 @@
 /* Begin PBXFileReference section */
 		002095542AF7435A00B02DE4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		002095572AF74C4900B02DE4 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		002095622AF77A2700B02DE4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		002095642AF77AD700B02DE4 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		002095662AF77E1200B02DE4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		002095682AF7805800B02DE4 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		0020956A2AF7849200B02DE4 /* NicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
+		0020956C2AF786E200B02DE4 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
+		0020956E2AF78BDF00B02DE4 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		00335E2F2AFAFF9C00FF742E /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		003DB96A2AF9EDFC00903AF8 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		00A10AA52AF650CD009DF4BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00A10AA92AF65947009DF4BC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		00A10AAC2AF66B2C009DF4BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		00A10AB12AF6ED8A009DF4BC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		00C784692AF90D2A00A0FFA7 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		0346F03350D434D946FA38FE /* Pods-iOS_201Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201Tests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		39EF6BB4D54E0FB04FC8C006 /* Pods-iOS_201Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201Tests.release.xcconfig"; path = "Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests.release.xcconfig"; sourceTree = "<group>"; };
 		48AAC6B30D58FBD096902EE7 /* Pods-iOS_201-iOS_201UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201-iOS_201UITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_201-iOS_201UITests/Pods-iOS_201-iOS_201UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,8 +149,19 @@
 			isa = PBXGroup;
 			children = (
 				002095572AF74C4900B02DE4 /* AuthModel.swift */,
+				002095682AF7805800B02DE4 /* ErrorModel.swift */,
+				0020956A2AF7849200B02DE4 /* NicknameModel.swift */,
+				0020956C2AF786E200B02DE4 /* OnBoardingModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		002095612AF77A1100B02DE4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				002095622AF77A2700B02DE4 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		00A10AA42AF650BF009DF4BC /* Login */ = {
@@ -146,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				00A10AAC2AF66B2C009DF4BC /* OnBoardingViewController.swift */,
+				002095642AF77AD700B02DE4 /* OnBoardingViewModel.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -154,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				00A10AB12AF6ED8A009DF4BC /* AuthService.swift */,
+				002095662AF77E1200B02DE4 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -206,6 +239,7 @@
 		E16C92A22AE686A900141952 /* iOS_201 */ = {
 			isa = PBXGroup;
 			children = (
+				002095612AF77A1100B02DE4 /* Coordinator */,
 				002095562AF74C3600B02DE4 /* Model */,
 				00A10AB02AF6ED7A009DF4BC /* Service */,
 				00A10AAB2AF66B13009DF4BC /* OnBoarding */,
@@ -247,6 +281,7 @@
 				E16C92AF2AE686AA00141952 /* Assets.xcassets */,
 				E16C92B12AE686AA00141952 /* LaunchScreen.storyboard */,
 				E16C92AC2AE686A900141952 /* iOS_201.xcdatamodeld */,
+				00335E2F2AFAFF9C00FF742E /* AppViewModel.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -264,6 +299,9 @@
 			children = (
 				E1799BEC2AF4B72C00A69A33 /* UIColor.swift */,
 				00A10AA92AF65947009DF4BC /* UIImage.swift */,
+				0020956E2AF78BDF00B02DE4 /* UITextField.swift */,
+				00C784692AF90D2A00A0FFA7 /* UITextView.swift */,
+				003DB96A2AF9EDFC00903AF8 /* UIButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -556,12 +594,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00335E302AFAFF9C00FF742E /* AppViewModel.swift in Sources */,
 				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */,
+				002095672AF77E1200B02DE4 /* UserService.swift in Sources */,
+				0020956F2AF78BDF00B02DE4 /* UITextField.swift in Sources */,
 				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */,
+				0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */,
+				002095632AF77A2700B02DE4 /* AppCoordinator.swift in Sources */,
 				E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
+				002095692AF7805800B02DE4 /* ErrorModel.swift in Sources */,
+				003DB96B2AF9EDFC00903AF8 /* UIButton.swift in Sources */,
 				002095552AF7435A00B02DE4 /* LoginViewModel.swift in Sources */,
 				00A10AB22AF6ED8A009DF4BC /* AuthService.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
@@ -571,6 +616,9 @@
 				00A10AA62AF650CD009DF4BC /* LoginViewController.swift in Sources */,
 				E16C92A62AE686A900141952 /* SceneDelegate.swift in Sources */,
 				002095582AF74C4900B02DE4 /* AuthModel.swift in Sources */,
+				002095652AF77AD700B02DE4 /* OnBoardingViewModel.swift in Sources */,
+				0020956D2AF786E200B02DE4 /* OnBoardingModel.swift in Sources */,
+				00C7846A2AF90D2A00A0FFA7 /* UITextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
