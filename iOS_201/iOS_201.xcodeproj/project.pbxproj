@@ -16,7 +16,6 @@
 		0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956A2AF7849200B02DE4 /* NicknameModel.swift */; };
 		0020956D2AF786E200B02DE4 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956C2AF786E200B02DE4 /* OnBoardingModel.swift */; };
 		0020956F2AF78BDF00B02DE4 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956E2AF78BDF00B02DE4 /* UITextField.swift */; };
-		00335E302AFAFF9C00FF742E /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00335E2F2AFAFF9C00FF742E /* AppViewModel.swift */; };
 		003DB96B2AF9EDFC00903AF8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003DB96A2AF9EDFC00903AF8 /* UIButton.swift */; };
 		00A10AA62AF650CD009DF4BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA52AF650CD009DF4BC /* LoginViewController.swift */; };
 		00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA92AF65947009DF4BC /* UIImage.swift */; };
@@ -81,7 +80,6 @@
 		0020956A2AF7849200B02DE4 /* NicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
 		0020956C2AF786E200B02DE4 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		0020956E2AF78BDF00B02DE4 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		00335E2F2AFAFF9C00FF742E /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		003DB96A2AF9EDFC00903AF8 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		00A10AA52AF650CD009DF4BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00A10AA92AF65947009DF4BC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 				E16C92AF2AE686AA00141952 /* Assets.xcassets */,
 				E16C92B12AE686AA00141952 /* LaunchScreen.storyboard */,
 				E16C92AC2AE686A900141952 /* iOS_201.xcdatamodeld */,
-				00335E2F2AFAFF9C00FF742E /* AppViewModel.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -594,7 +591,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00335E302AFAFF9C00FF742E /* AppViewModel.swift in Sources */,
 				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */,
 				002095672AF77E1200B02DE4 /* UserService.swift in Sources */,
