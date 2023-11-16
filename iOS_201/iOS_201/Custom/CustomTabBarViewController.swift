@@ -9,6 +9,8 @@ import UIKit
 
 class CustomTabBarViewController: UITabBarController {
 
+    weak var appCoordinator: AppCoordinator?
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -38,10 +40,14 @@ class CustomTabBarViewController: UITabBarController {
 
     
     private func createStudyListTab() -> UINavigationController {
+        let nav = UINavigationController()
         let item = configureTabBarItemTitle(title: "스터디목록", imageName: "studyListTab")
-        let VC = StudyListViewController()
-        VC.tabBarItem = item
-        return UINavigationController(rootViewController: VC)
+        let coordinator = StudyTabCoordinator(navigationController: nav)
+        coordinator.tabBarItem = item
+        coordinator.delegate = appCoordinator
+        coordinator.start()
+        self.appCoordinator?.studyTabCoordinator = StudyTabCoordinator(navigationController: nav)
+        return nav
     }
     
     private func createMessageTab() -> UINavigationController{
