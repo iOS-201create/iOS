@@ -31,6 +31,15 @@
 		E10ADA972B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA962B06F6F200A286E3 /* CreateStudyStep2ViewController.swift */; };
 		E10ADA982B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA962B06F6F200A286E3 /* CreateStudyStep2ViewController.swift */; };
 		E10ADA992B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA962B06F6F200A286E3 /* CreateStudyStep2ViewController.swift */; };
+		E10ADA9C2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */; };
+		E10ADA9D2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */; };
+		E10ADA9E2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */; };
+		E10ADAA12B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA02B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift */; };
+		E10ADAA22B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA02B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift */; };
+		E10ADAA32B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA02B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift */; };
+		E10ADAA52B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */; };
+		E10ADAA62B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */; };
+		E10ADAA72B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */; };
 		E1598CEF2AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
 		E1598CF02AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
 		E1598CF12AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
@@ -124,6 +133,9 @@
 		C9D289F5E609236BA7C97AC6 /* Pods_iOS_201_iOS_201UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_201_iOS_201UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10ADA8E2B05B40900A286E3 /* CreateStudyStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStep1ViewController.swift; sourceTree = "<group>"; };
 		E10ADA962B06F6F200A286E3 /* CreateStudyStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStep2ViewController.swift; sourceTree = "<group>"; };
+		E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTabCoordinator.swift; sourceTree = "<group>"; };
+		E10ADAA02B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStep1Coordinator.swift; sourceTree = "<group>"; };
+		E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStep2Coordinator.swift; sourceTree = "<group>"; };
 		E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewModel.swift; sourceTree = "<group>"; };
 		E1598CF22AF78C3400677F45 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +207,7 @@
 		002095612AF77A1100B02DE4 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				E10ADA9A2B0741E400A286E3 /* TabCoordinator */,
 				002095622AF77A2700B02DE4 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -253,6 +266,7 @@
 		E10ADA8A2B05B39400A286E3 /* CreateStudy */ = {
 			isa = PBXGroup;
 			children = (
+				E10ADA9F2B0747A500A286E3 /* Coordinator */,
 				E10ADA8D2B05B3F500A286E3 /* ViewModel */,
 				E10ADA8C2B05B3F300A286E3 /* Model */,
 				E10ADA8B2B05B3EF00A286E3 /* View */,
@@ -281,6 +295,30 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E10ADA9A2B0741E400A286E3 /* TabCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabCoordinator;
+			sourceTree = "<group>";
+		};
+		E10ADA9F2B0747A500A286E3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E10ADAA02B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift */,
+				E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E10ADAA82B0747FA00A286E3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		E16C92972AE686A900141952 = {
@@ -390,6 +428,7 @@
 				E10ADA8A2B05B39400A286E3 /* CreateStudy */,
 				E1D5CE182AF6416B00B02823 /* ViewModel */,
 				E1D5CE172AF6416900B02823 /* Model */,
+				E10ADAA82B0747FA00A286E3 /* Coordinator */,
 				E1D5CE162AF6416600B02823 /* View */,
 			);
 			path = StudyList;
@@ -724,15 +763,18 @@
 				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */,
+				E10ADAA12B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */,
 				E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */,
 				0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */,
 				002095632AF77A2700B02DE4 /* AppCoordinator.swift in Sources */,
+				E10ADA9C2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */,
 				E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 				002095692AF7805800B02DE4 /* ErrorModel.swift in Sources */,
 				003DB96B2AF9EDFC00903AF8 /* UIButton.swift in Sources */,
 				002095552AF7435A00B02DE4 /* LoginViewModel.swift in Sources */,
+				E10ADAA52B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */,
 				00A10AB22AF6ED8A009DF4BC /* AuthService.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
 				E1799BF92AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
@@ -765,11 +807,14 @@
 				E1F73B372AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				E1598CF82AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E10ADA982B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */,
+				E10ADAA22B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */,
 				E1799BFE2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				E1598CF42AF78C3400677F45 /* UIViewController.swift in Sources */,
 				E1799BFA2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
+				E10ADA9D2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */,
 				E1598CF02AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1799BF62AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
+				E10ADAA62B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */,
 				E1799C022AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,6 +829,7 @@
 				E16C92CA2AE686AA00141952 /* iOS_201UITestsLaunchTests.swift in Sources */,
 				E1598CF12AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
+				E10ADA9E2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */,
 				E10ADA912B05B40900A286E3 /* CreateStudyStep1ViewController.swift in Sources */,
 				E1799BFF2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				E1799BEF2AF4B72C00A69A33 /* UIColor.swift in Sources */,
@@ -794,6 +840,8 @@
 				E1D5CE1C2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E1799BE92AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				E1D5CE282AF669F000B02823 /* StudyTableViewCell.swift in Sources */,
+				E10ADAA72B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */,
+				E10ADAA32B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */,
 				E10ADA992B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

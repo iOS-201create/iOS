@@ -21,21 +21,3 @@ class CreateStudyStep2ViewController: UIViewController {
     }
 
 }
-
-class CreateStudyStep2Coordinator: NavigationCoordinator {
-    var delegate: NavigationCoordinator?
-    
-    var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController, delegate: Coordinator) {
-        self.navigationController = navigationController
-    }
-    
-    func start() {
-        let vc = CreateStudyStep2ViewController()
-        vc.coordinator = self
-        self.navigationController.pushViewController(vc, animated: true)
-    }
-
-}
