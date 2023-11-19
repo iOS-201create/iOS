@@ -10,6 +10,8 @@ import SnapKit
 
 class StudyListViewController: UIViewController {
     
+    var coordinator: StudyTabCoordinator?
+    
     typealias FilterType        = FilterCollectionViewCell.filterType
     
     //MARK: - Properties
@@ -97,6 +99,8 @@ class StudyListViewController: UIViewController {
             make.centerY.equalToSuperview()
             make.leading.equalTo(bookIcon.snp.trailing).offset(4)
         }
+        
+        makeStudyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showCreateStudy(_ :))))
     }
     
     private func configureFilterCollectionView(){
@@ -126,6 +130,10 @@ class StudyListViewController: UIViewController {
             self.isPaging = false
             self.tableView.reloadData()
         }
+    }
+    
+    @objc func showCreateStudy(_ : UITapGestureRecognizer){
+        self.coordinator?.showCreateStudy()
     }
 }
 
