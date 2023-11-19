@@ -54,7 +54,6 @@ class AppCoordinator: Coordinator {
     // Tab을 가진 메인화면으로 이동할때는 RootView를 바꾸기 때문에 이 Navagation은 사용하지 않습니다.
     var navigationController: UINavigationController
     
-    //TODO: - 4개의 탭 coordinator를 가질 예정 -> ✅ 현호씨가 나머지를 도와주세요
     // CustomTabBarController.swift에서 각 객체를 생성하여 넣습니다.
     var studyTabCoordinator: StudyTabCoordinator? = nil
 //    var homeTabCoordinator: HomeTabCoordinator? = nil
@@ -66,26 +65,36 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        /// 첫시작은 BoardVC 차후 로그인/ 자동로그인 유무에 따라 조건추가 가능
-        changeToMainView()
+        /// UserDefault에 저장된 인증모델이 있다면 main 으로 넘어갑니다.
+        /// 토큰이 만료되었다 하더라도, 차후 서버로 요청을 통해 token 을 재발급 받기때문에 문제가 없을것같아 이렇게 만들었습니다.
+        if let data = UserDefaults.standard.value(forKey:"authModel") as? Data,
+           let authModel = try? PropertyListDecoder().decode(AuthModel.self, from: data) {
+            changeToMainView()
+        } else {
+            goToLoginView()
+        }
+        
+        
     }
     
     func goToLoginView() {
-        let vc = LoginViewController()
-        vc.viewmodel.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let coordinator = LoginCoordinator(childCoordinators: childCoordinators, navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
     }
-    
+
     func goToOnBoardingView() {
-        let vc = OnBoardingViewController()
-        vc.viewmodel.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let coordinator = OnBoardingCoordinator(childCoordinators: childCoordinators, navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        childCoordinators.append(coordinator)
+        
     }
     
     func changeToMainView() {
         let vc = CustomTabBarViewController()
         vc.appCoordinator = self
-//        UIApplication.shared.keyWindow?.replaceRootViewController(vc, animated: true, completion: nil) // 'keyWindow' was deprecated in iOS 13.0:
         self.navigationController.view.window?.rootViewController = vc
     }
     

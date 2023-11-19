@@ -6,6 +6,8 @@ import SnapKit
 
 class OnBoardingViewController: UIViewController {
     
+    var coordinator: OnBoardingCoordinator?
+    
     var viewmodel = OnBoardingViewModel()
     
     var cancellable: Set<AnyCancellable> = []
@@ -369,7 +371,7 @@ extension OnBoardingViewController {
                     }
                     self?.loddingView.stopAnimating()
                 case .submitDidSuccess:
-                    print("cc")
+                    self?.coordinator?.goToMain()
                 }
             }
             .store(in: &cancellable)

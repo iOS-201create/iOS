@@ -48,8 +48,6 @@ class UserService {
         }
     }
     
-    /// 온보딩 여부 검사
-    
     /// 유저정보 수정
     func patchUserInfo(nickname: String, content: String, accessToken: String, completion: @escaping (Bool) -> Void ) {
         let url = "https://test.201-study.shop/v1/members"

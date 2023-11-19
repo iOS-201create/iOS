@@ -17,22 +17,29 @@ final class OnBoardingViewModel: ObservableObject {
         case submitDidSuccess
     }
     
-    private var output : PassthroughSubject<Output,Never> = .init() /// view에 보내줄 publisher
+    /// view에 보내줄 publisher
+    private var output : PassthroughSubject<Output,Never> = .init()
     
-    private var nickname =  PassthroughSubject<String,Never>()  /// 닉네임
-    private var resultNickname = "" /// 서버로 보낼 닉네임
+    /// 닉네임
+    private var nickname =  PassthroughSubject<String,Never>()
     
-    @Published var content = "" /// 소개란
+    /// 서버로 보낼 닉네임
+    private var resultNickname = ""
     
-    @Published var isEnableNickname = false /// 닉네임 사용가능여부
+    /// 소개란
+    @Published var content = ""
     
-    @Published var authModel: AuthModel?    /// auth
-
-    weak var coordinator: AppCoordinator?   /// coordinator
+    /// 닉네임 사용가능여부
+    @Published var isEnableNickname = false
     
-    var cancellable = Set<AnyCancellable>() /// rx로 치면 disposeback?? 그런애
+    /// auth
+    @Published var authModel: AuthModel?
     
-    lazy var isMatchPasswordInput = Publishers  /// 닉네임이 가능하고 설명란이 입력되면 버튼이 활성화
+    /// rx로 치면 disposeback?? 그런애
+    var cancellable = Set<AnyCancellable>()
+    
+    /// 닉네임이 가능하고 설명란이 입력되면 버튼이 활성화
+    lazy var isMatchPasswordInput = Publishers
         .CombineLatest($isEnableNickname,$content)
         .map{ isEnable, content in
             if isEnable && !content.isEmpty {
@@ -106,8 +113,8 @@ extension OnBoardingViewModel {
     func submitButtonDidTap() {
         UserService.share.patchUserInfo(nickname: resultNickname, content: content, accessToken: authModel?.accessToken ?? "") { result in
             if result {
-                print("메인페이지로 이동")
-                self.coordinator?.changeToMainView()
+                self.output.send(.submitDidSuccess)
+                
             } else {
                 print("인증실패 알림.")
             }

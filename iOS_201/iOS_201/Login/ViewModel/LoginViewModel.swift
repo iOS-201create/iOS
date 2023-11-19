@@ -20,9 +20,8 @@ class LoginViewModel : ObservableObject {
         case requestCodeFail
     }
     
-    private var output : PassthroughSubject<Output,Never> = .init() /// view에 보내줄 publisher
-
-    weak var coordinator : AppCoordinator?
+    /// view에 보내줄 publisher
+    private var output : PassthroughSubject<Output,Never> = .init()
     
     var cancellable = Set<AnyCancellable>()
     
@@ -46,15 +45,12 @@ class LoginViewModel : ObservableObject {
 
 extension LoginViewModel {
     func fetchCodeToGithub() {
-        AuthService.share.requestCode {
+        AuthService.share.requestGithubCode {
             if $0 {
-                print("LoginViewModel : fetchCodaToGithub() - 인증성공 알림호출 & 화면이동")
                 self.output.send(.requestCodeSuccess)
-                self.coordinator?.goToOnBoardingView()
                 return
             }
             self.output.send(.requestCodeFail)
-            print("LoginViewModel : fetchCodaToGithub() - 인증실패 알림 호출")
         }
     }
 }

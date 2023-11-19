@@ -12,6 +12,8 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     
+    var coordinator: LoginCoordinator?
+    
     let viewmodel = LoginViewModel()
     
     var cancellable = Set<AnyCancellable>()
@@ -113,7 +115,7 @@ extension LoginViewController {
                 case .requestCodeFail:
                     print("차후 AlterView 로 인증실패 알림")
                 case .requestCodeSuccess:
-                    print("화면이동")
+                    print("SceneDelegate 의 웹뷰로 이동하게됌")
                 }
             }
             .store(in: &cancellable)
