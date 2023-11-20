@@ -16,6 +16,7 @@
 		0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956A2AF7849200B02DE4 /* NicknameModel.swift */; };
 		0020956F2AF78BDF00B02DE4 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020956E2AF78BDF00B02DE4 /* UITextField.swift */; };
 		003DB96B2AF9EDFC00903AF8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003DB96A2AF9EDFC00903AF8 /* UIButton.swift */; };
+		0043194A2B0B3E150031B1BF /* MyPageTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004319492B0B3E150031B1BF /* MyPageTabCoordinator.swift */; };
 		004D73A82B0A47DC00D8F96E /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D73A72B0A47DC00D8F96E /* LoginCoordinator.swift */; };
 		004D73AA2B0A4B0100D8F96E /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D73A92B0A4B0100D8F96E /* OnBoardingCoordinator.swift */; };
 		00A10AA62AF650CD009DF4BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA52AF650CD009DF4BC /* LoginViewController.swift */; };
@@ -119,6 +120,7 @@
 		0020956A2AF7849200B02DE4 /* NicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
 		0020956E2AF78BDF00B02DE4 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		003DB96A2AF9EDFC00903AF8 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		004319492B0B3E150031B1BF /* MyPageTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTabCoordinator.swift; sourceTree = "<group>"; };
 		004D73A72B0A47DC00D8F96E /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		004D73A92B0A4B0100D8F96E /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
 		00A10AA52AF650CD009DF4BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,36 @@
 				002095622AF77A2700B02DE4 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		003EA6BD2B0B399D000C8436 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				004319492B0B3E150031B1BF /* MyPageTabCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		003EA6BE2B0B39A2000C8436 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		003EA6BF2B0B39A5000C8436 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		003EA6C02B0B39A8000C8436 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		004D73AC2B0A5E5500D8F96E /* Model */ = {
@@ -496,7 +528,10 @@
 		E1799BF32AF4BADF00A69A33 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */,
+				003EA6C02B0B39A8000C8436 /* Model */,
+				003EA6BF2B0B39A5000C8436 /* ViewModel */,
+				003EA6BE2B0B39A2000C8436 /* View */,
+				003EA6BD2B0B399D000C8436 /* Coordinator */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -815,6 +850,7 @@
 				E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E10ADAA12B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */,
+				0043194A2B0B3E150031B1BF /* MyPageTabCoordinator.swift in Sources */,
 				E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */,
 				0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */,

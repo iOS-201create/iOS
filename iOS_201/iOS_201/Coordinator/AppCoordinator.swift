@@ -69,7 +69,7 @@ class AppCoordinator: Coordinator {
     var studyTabCoordinator: StudyTabCoordinator? = nil
 //    var homeTabCoordinator: HomeTabCoordinator? = nil
 //    var MessageTabCoordinator: MessageTabCoordinator? = nil
-//    var myPageTabCoordinator: MyPageTabCoordinator? = nil
+    var myPageTabCoordinator: MyPageTabCoordinator? = nil
     
     init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -79,7 +79,7 @@ class AppCoordinator: Coordinator {
         /// UserDefault에 저장된 인증모델이 있다면 main 으로 넘어갑니다.
         /// 토큰이 만료되었다 하더라도, 차후 서버로 요청을 통해 token 을 재발급 받기때문에 문제가 없을것같아 이렇게 만들었습니다.
         if let data = UserDefaults.standard.value(forKey:"authModel") as? Data,
-           let authModel = try? PropertyListDecoder().decode(AuthModel.self, from: data) {
+           let _ = try? PropertyListDecoder().decode(AuthModel.self, from: data) {
             changeToMainView()
         } else {
             goToLoginView()

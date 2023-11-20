@@ -59,10 +59,14 @@ class CustomTabBarViewController: UITabBarController {
     }
     
     private func createMyPageTab() -> UINavigationController{
+        let nav = UINavigationController()
         let item = configureTabBarItemTitle(title: "마이페이지", imageName: "myPageTab")
-        let VC = MypageViewController()
-        VC.tabBarItem = item
-        return UINavigationController(rootViewController: VC)
+        let coordinator = MyPageTabCoordinator(navigationController: nav)
+        coordinator.tabBarItem = item
+        coordinator.delegate = appCoordinator
+        coordinator.start()
+        self.appCoordinator?.studyTabCoordinator = StudyTabCoordinator(navigationController: nav)
+        return nav
     }
     
     private func configureTabBarItemTitle(title:String, imageName: String ) -> UITabBarItem{

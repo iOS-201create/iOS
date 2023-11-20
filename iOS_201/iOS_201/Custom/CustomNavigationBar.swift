@@ -20,9 +20,8 @@ class CustomNavigationBar: UIView {
         return label
     }()
     
-    let searchBtn: UIButton = {
+    let rightButton: UIButton = {
         let btn = UIButton()
-        btn.setImage(UIImage(named: "searchBtn"), for: .normal)
         btn.setTitle(nil, for: .normal)
         btn.setTitleColor(.clear, for: .normal)
         return btn
@@ -46,22 +45,26 @@ class CustomNavigationBar: UIView {
     
     // MARK: - Setup
     
-    func configureUI(title: String) {
+    func configureUI(title: String, rightButtonImage: String) {
         backgroundColor = .black01
+        
         addSubview(titleLabel)
         titleLabel.text = title
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
+        
         addSubview(bottomBorder)
         bottomBorder.snp.makeConstraints { make in
             make.height.equalTo(1)
             make.width.equalToSuperview()
             make.leading.trailing.bottom.equalToSuperview()
         }
-        addSubview(searchBtn)
-        searchBtn.snp.makeConstraints { make in
+        
+        addSubview(rightButton)
+        rightButton.setImage(UIImage(named: rightButtonImage), for: .normal)
+        rightButton.snp.makeConstraints { make in
             make.width.height.equalTo(20)
             make.centerY.equalToSuperview()
             make.trailingMargin.equalToSuperview().inset(20)
