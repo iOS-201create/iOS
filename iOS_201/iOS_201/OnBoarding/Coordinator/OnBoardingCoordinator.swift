@@ -27,7 +27,7 @@ class OnBoardingCoordinator: Coordinator {
     }
     
     func goToMain() {
+        delegate?.finish()
         delegate?.changeToMainView()
     }
-    
 }

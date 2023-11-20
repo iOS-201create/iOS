@@ -15,8 +15,8 @@ class LoginCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    init(childCoordinators: [Coordinator], navigationController: UINavigationController) {
-        self.childCoordinators = childCoordinators
+    init(childCoordinator: [Coordinator] , navigationController: UINavigationController) {
+        self.childCoordinators = childCoordinator
         self.navigationController = navigationController
     }
     
@@ -25,8 +25,4 @@ class LoginCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
-    
-
-    
-    
 }

@@ -12,6 +12,17 @@ protocol Coordinator: AnyObject {
     func start()
 }
 
+extension Coordinator {
+    
+    /// navigation의 특성상 뒤로가기시, 자동으로 pop이 되기도 하고
+    /// onBoarding에서 main으로 갈때는 기존의 child들을 다 삭제하고, rootView를 변경하는 작업이다보니
+    /// LoginCoordinator와 onBoardingCoordinator를 모두다 삭제하는것도 좋아보여서 finish() 를 추가했습니다..!
+    func finish(){
+        childCoordinators.removeAll()
+        navigationController.popViewController(animated: true)
+    }
+}
+
 protocol TabCoordinator: Coordinator {
     // TabBarController에 붙는 Coordinator입니다.
     // 다른 예제들을 보면 탭간의 이동시에도 TabCoordinator를 사용하는 예재도 있습니다.
@@ -78,7 +89,7 @@ class AppCoordinator: Coordinator {
     }
     
     func goToLoginView() {
-        let coordinator = LoginCoordinator(childCoordinators: childCoordinators, navigationController: navigationController)
+        let coordinator = LoginCoordinator(childCoordinator: childCoordinators, navigationController: navigationController)
         coordinator.delegate = self
         coordinator.start()
         childCoordinators.append(coordinator)
