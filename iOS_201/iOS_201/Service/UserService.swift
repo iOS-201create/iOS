@@ -86,4 +86,9 @@ class UserService {
         }
 
     }
+    
+    /// 내프로필 조회
+    func requestMyProfile() {
+        
+    }
 }

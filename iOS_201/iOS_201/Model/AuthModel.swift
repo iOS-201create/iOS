@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthModel: Codable, Hashable {
+struct AuthModel: Encodable, Decodable {
     let accessToken: String
     let refreshToken: String
 }

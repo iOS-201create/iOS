@@ -26,6 +26,11 @@
 		00C7846A2AF90D2A00A0FFA7 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C784692AF90D2A00A0FFA7 /* UITextView.swift */; };
 		1AE1E41B0383BF6663752C79 /* Pods_iOS_201.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A54D5350CB8A12B6C05209 /* Pods_iOS_201.framework */; };
 		74826A81EBBDCFD90B4CE793 /* Pods_iOS_201_iOS_201UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D289F5E609236BA7C97AC6 /* Pods_iOS_201_iOS_201UITests.framework */; };
+		77CC87C92B0C570000260A2C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC87C82B0C570000260A2C /* UIImageView.swift */; };
+		77CC87CB2B0C789C00260A2C /* TodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC87CA2B0C789C00260A2C /* TodoCollectionViewCell.swift */; };
+		77F681B02B0D13E1003B8AE2 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F681AF2B0D13E1003B8AE2 /* MyPageViewModel.swift */; };
+		77F681B32B0D16FB003B8AE2 /* TokenRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F681B22B0D16FB003B8AE2 /* TokenRequestInterceptor.swift */; };
+		77F681B52B0D1DF4003B8AE2 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F681B42B0D1DF4003B8AE2 /* ProfileModel.swift */; };
 		78F317F05B6D2F035914518F /* Pods_iOS_201Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74DA1177D8A4F11AA5C737 /* Pods_iOS_201Tests.framework */; };
 		E10ADA8F2B05B40900A286E3 /* CreateStudyStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA8E2B05B40900A286E3 /* CreateStudyStep1ViewController.swift */; };
 		E10ADA902B05B40900A286E3 /* CreateStudyStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADA8E2B05B40900A286E3 /* CreateStudyStep1ViewController.swift */; };
@@ -131,6 +136,11 @@
 		0346F03350D434D946FA38FE /* Pods-iOS_201Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201Tests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		39EF6BB4D54E0FB04FC8C006 /* Pods-iOS_201Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201Tests.release.xcconfig"; path = "Target Support Files/Pods-iOS_201Tests/Pods-iOS_201Tests.release.xcconfig"; sourceTree = "<group>"; };
 		48AAC6B30D58FBD096902EE7 /* Pods-iOS_201-iOS_201UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201-iOS_201UITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_201-iOS_201UITests/Pods-iOS_201-iOS_201UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		77CC87C82B0C570000260A2C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		77CC87CA2B0C789C00260A2C /* TodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollectionViewCell.swift; sourceTree = "<group>"; };
+		77F681AF2B0D13E1003B8AE2 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageViewModel.swift; path = iOS_201/MyPage/View/MyPageViewModel.swift; sourceTree = SOURCE_ROOT; };
+		77F681B22B0D16FB003B8AE2 /* TokenRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestInterceptor.swift; sourceTree = "<group>"; };
+		77F681B42B0D1DF4003B8AE2 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileModel.swift; path = iOS_201/RequestInterceptor/ProfileModel.swift; sourceTree = SOURCE_ROOT; };
 		96DCA3DBA451A66C118DE80E /* Pods-iOS_201-iOS_201UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201-iOS_201UITests.release.xcconfig"; path = "Target Support Files/Pods-iOS_201-iOS_201UITests/Pods-iOS_201-iOS_201UITests.release.xcconfig"; sourceTree = "<group>"; };
 		AF548CE4AD6EE95C0AAE6A10 /* Pods-iOS_201.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201.release.xcconfig"; path = "Target Support Files/Pods-iOS_201/Pods-iOS_201.release.xcconfig"; sourceTree = "<group>"; };
 		BF0B86635ABBA38B6234E0CA /* Pods-iOS_201.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_201.debug.xcconfig"; path = "Target Support Files/Pods-iOS_201/Pods-iOS_201.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */,
+				77CC87CA2B0C789C00260A2C /* TodoCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 		003EA6BF2B0B39A5000C8436 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				77F681AF2B0D13E1003B8AE2 /* MyPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,6 +252,7 @@
 		003EA6C02B0B39A8000C8436 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				77F681B42B0D1DF4003B8AE2 /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +356,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		77F681B12B0D16C4003B8AE2 /* RequestInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				77F681B22B0D16FB003B8AE2 /* TokenRequestInterceptor.swift */,
+			);
+			path = RequestInterceptor;
+			sourceTree = "<group>";
+		};
 		98D68E9381B307F53D5231BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +450,7 @@
 		E16C92A22AE686A900141952 /* iOS_201 */ = {
 			isa = PBXGroup;
 			children = (
+				77F681B12B0D16C4003B8AE2 /* RequestInterceptor */,
 				002095612AF77A1100B02DE4 /* Coordinator */,
 				002095562AF74C3600B02DE4 /* Model */,
 				00A10AB02AF6ED7A009DF4BC /* Service */,
@@ -493,6 +515,7 @@
 				0020956E2AF78BDF00B02DE4 /* UITextField.swift */,
 				00C784692AF90D2A00A0FFA7 /* UITextView.swift */,
 				003DB96A2AF9EDFC00903AF8 /* UIButton.swift */,
+				77CC87C82B0C570000260A2C /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -842,10 +865,12 @@
 				E1598CEF2AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1D5CE1E2AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
 				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
+				77F681B52B0D1DF4003B8AE2 /* ProfileModel.swift in Sources */,
 				00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */,
 				E10ADA8F2B05B40900A286E3 /* CreateStudyStep1ViewController.swift in Sources */,
 				002095672AF77E1200B02DE4 /* UserService.swift in Sources */,
 				0020956F2AF78BDF00B02DE4 /* UITextField.swift in Sources */,
+				77F681B32B0D16FB003B8AE2 /* TokenRequestInterceptor.swift in Sources */,
 				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */,
@@ -854,7 +879,10 @@
 				E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */,
 				0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */,
+				77CC87CB2B0C789C00260A2C /* TodoCollectionViewCell.swift in Sources */,
 				002095632AF77A2700B02DE4 /* AppCoordinator.swift in Sources */,
+				77F681B02B0D13E1003B8AE2 /* MyPageViewModel.swift in Sources */,
+				77CC87C92B0C570000260A2C /* UIImageView.swift in Sources */,
 				E10ADA9C2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */,
 				E1799BE72AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
 				004D73AA2B0A4B0100D8F96E /* OnBoardingCoordinator.swift in Sources */,

@@ -52,35 +52,8 @@ class AuthService {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(authModel), forKey:"authModel")
     }
     
-    func refreshToken() {
-        guard let data = UserDefaults.standard.value(forKey:"authModel") as? Data,
-              let authModel = try? PropertyListDecoder().decode(AuthModel.self, from: data)
-        else {
-            print("UserDefault에 저장된 모델이 없습니다.")
-            return
-        }
-        
-        let url = "https://test.201-study.shop/v1/login/tokens/refresh"
-        
-        let headers: HTTPHeaders = [ "Accept": "application/json" ]
-        
-        let params: [String: String] = [ "refreshToken" : authModel.refreshToken ]
-
-        AF.request(url,
-                   method: .patch,
-                   parameters: params,
-                   encoding: JSONEncoding.default,
-                   headers: headers
-        ).responseDecodable(of: AuthModel.self) { [weak self] response in
-            switch response.result {
-            case .success(let result):
-                self?.authModel = result
-                self?.saveToken(authModel: result)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-
+    func refreshToken(authModel: AuthModel) {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(authModel), forKey:"authModel")
+        self.authModel = authModel
     }
 }
