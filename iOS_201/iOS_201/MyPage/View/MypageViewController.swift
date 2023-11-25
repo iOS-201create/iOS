@@ -7,56 +7,33 @@
 
 import UIKit
 
+import Kingfisher
+import RxSwift
+import RxCocoa
 import SnapKit
 
 class MypageViewController: UIViewController {
     
     var coordinator: MyPageTabCoordinator?
     
-    var collectionImage: [UIImage] = []
-    
-    var tierImage: [String] = []
-    
     var viewmodel = MyPageViewModel()
-    
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.bounces = false
-        cv.collectionViewLayout = layout
-        cv.backgroundColor = .black01
-        cv.showsHorizontalScrollIndicator = false
-        cv.register(TodoCollectionViewCell.self, forCellWithReuseIdentifier: TodoCollectionViewCell.identifier)
-        cv.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 0, right: 12)
-        
-        return cv
-    }()
-    
-    let profileHstack: UIStackView = {
-        let profileHstack = UIStackView()
-        profileHstack.axis = .horizontal
-        profileHstack.spacing = 5
-        profileHstack.distribution = .fillProportionally
-        return profileHstack
-    }()
+    var disposeBag = DisposeBag()
     
     let profileVstack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 5
-        stack.distribution = .fillEqually
+        stack.distribution = .fillProportionally
+        stack.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
         return stack
     }()
     
     let profileImage: UIImageView = {
         let imageview = UIImageView(frame: CGRectMake(0, 0, 50, 50))
-        imageview.image = .checkmark
-        imageview.contentMode = .scaleAspectFill
+        imageview.image = UIImage(systemName: "person")
+        imageview.contentMode = .scaleAspectFit
         imageview.backgroundColor = .white
         imageview.makeRounded()
-        imageview.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
         return imageview
     }()
     
@@ -68,7 +45,7 @@ class MypageViewController: UIViewController {
         return label
     }()
     
-    let userID: UILabel = {
+    lazy var userID: UILabel = {
         let label = UILabel()
         label.text = "jwt1234"
         label.font = .systemFont(ofSize: 12)
@@ -149,10 +126,23 @@ class MypageViewController: UIViewController {
     
     let todoRate: UILabel = {
         let label = UILabel()
-        label.text = "82회"
         label.textColor = UIColor(hexCode: "A2FF86")
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
+    }()
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.bounces = false
+        cv.collectionViewLayout = layout
+        cv.backgroundColor = .black01
+        cv.showsHorizontalScrollIndicator = false
+        cv.register(TodoCollectionViewCell.self, forCellWithReuseIdentifier: TodoCollectionViewCell.identifier)
+        
+        return cv
     }()
     
     lazy var tierCollectionView: UIView = {
@@ -163,9 +153,10 @@ class MypageViewController: UIViewController {
         
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(60)
+            make.top.equalToSuperview().inset(12)
+            make.horizontalEdges.equalToSuperview().inset(12)
+            make.height.equalTo(80)
+            
         }
         
         let stack = UIStackView()
@@ -178,7 +169,7 @@ class MypageViewController: UIViewController {
         less.textColor = .gray
         stack.addArrangedSubview(less)
         
-        tierImage.forEach {
+        viewmodel.tierImages.forEach {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 8, height: 8))
             imageView.image = UIImage(named: $0)?.resize(targetSize: CGSize(width: 8, height: 8))
             imageView.contentMode = .scaleAspectFit
@@ -193,13 +184,10 @@ class MypageViewController: UIViewController {
         
         contentView.addSubview(stack)
         stack.snp.makeConstraints { make in
-            
-            make.top.equalTo(collectionView.snp.bottom).offset(12)
+            make.top.equalTo(collectionView.snp.bottom)
             make.leading.greaterThanOrEqualTo(contentView.snp.leading).offset(30)
             make.trailing.equalTo(contentView.snp.trailing).offset(-12)
         }
-        
-        
         
         return contentView
     }()
@@ -221,25 +209,38 @@ class MypageViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black01
         configureNavigationBar(title: "마이페이지", rightButtonImage: "settingBtn")
-        
-        for _ in 0 ..< 20 {
-            collectionImage.append(UIImage(systemName: "person")!)
-        }
-        
-        for i in 1 ... 5 {
-            tierImage.append("tier\(i)")
-        }
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         addView()
         setLayout()
         
+        viewmodel.requestMyProfile()
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: { [weak self] profileModel in
+                self?.userID.text = profileModel.githubId
+                self?.userName.text = profileModel.nickname
+                self?.introduceTextView.text = profileModel.introduction
+                self?.profileImage.kf.setImage(with: URL(string: profileModel.profileImageUrl))
+                self?.studyRate.text = "\(profileModel.successRate)회"
+                self?.todoRate.text = "\(profileModel.successfulRoundCount)회"
+                self?.collectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        
+        profileEditBtn.rx
+            .tap
+            .subscribe(onNext: { print("Observable이 항목을 방출 했다!") },
+                       onError: { error in print("에러가 발생 했다!") },
+                       onCompleted: { print("해당 이벤트가 끝났다!") }
+            )
+            .disposed(by: disposeBag)
+        
+        
     }
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewmodel.requestMyProfile()
     }
 }
 
@@ -247,15 +248,17 @@ class MypageViewController: UIViewController {
 
 extension MypageViewController {
     func addView() {
-        view.addSubview(profileHstack)
-        profileHstack.addArrangedSubview(profileImage)
-        profileHstack.addArrangedSubview(profileVstack)
+
+        view.addSubview(profileImage)
+        view.addSubview(profileVstack)
+        view.addSubview(profileEditBtn)
+        view.addSubview(sucessHstack)
+        view.addSubview(tierCollectionView)
+        view.addSubview(introduceTextView)
+        
         profileVstack.addArrangedSubview(userName)
         profileVstack.addArrangedSubview(userID)
         
-        view.addSubview(profileEditBtn)
-        
-        view.addSubview(sucessHstack)
         sucessHstack.addArrangedSubview(studyVstack)
         sucessHstack.addArrangedSubview(todoVstack)
         
@@ -266,21 +269,27 @@ extension MypageViewController {
         todoVstack.addArrangedSubview(todoImage)
         todoVstack.addArrangedSubview(todoLabel)
         todoVstack.addArrangedSubview(todoRate)
-        
-        view.addSubview(tierCollectionView)
-        view.addSubview(introduceTextView)
+
     }
     
     func setLayout() {
-        profileHstack.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(96)
+        
+        profileImage.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(89)
             make.leading.equalTo(view.snp.leading).offset(40)
+            make.size.equalTo(50)
+        }
+        
+        profileVstack.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(89)
+            make.leading.equalTo(profileImage.snp.trailing).offset(12)
+            make.trailing.equalTo(view.snp.trailing).offset(40)
+            make.height.equalTo(50)
         }
         
         profileEditBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(profileHstack.snp.bottom).offset(18)
+            make.top.equalTo(profileImage.snp.bottom).offset(18)
             make.leading.equalTo(view.snp.leading).offset(32)
             make.height.equalTo(30)
         }
@@ -295,7 +304,7 @@ extension MypageViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(sucessHstack.snp.bottom).offset(25)
             make.leading.equalTo(50)
-            make.height.equalTo(88)
+            make.height.equalTo(100)
         }
         
         introduceTextView.snp.makeConstraints { make in
@@ -308,10 +317,11 @@ extension MypageViewController {
 }
 
 
-//UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegate
+
 extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.collectionImage.count
+        return viewmodel.collectionImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -320,23 +330,26 @@ extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollection
             fatalError("Fail to Dequeue TodoCell")
         }
          
-        let image = collectionImage[indexPath.row]
+        let image = viewmodel.collectionImages[indexPath.row]
         cell.configure(with: image)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (self.collectionView.frame.size.width / 10) - 10.8
+        
+        // 24 = collectionview margin, 36 = sum of size between collectionViewCll
+        let size = ((self.tierCollectionView.frame.size.width - 24 - 36) / 10)
+        
         return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        return 4
     }
     
 }

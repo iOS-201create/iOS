@@ -45,14 +45,13 @@ final class TokenRequestInterceptor: RequestInterceptor {
         
         let params: [String: String] = [ "refreshToken" : authModel.refreshToken ]
         
-        print(authModel)
-        
         AF.request(url,
                    method: .post,
                    parameters: params,
                    encoding: JSONEncoding.default,
                    headers: headers
         ).responseDecodable(of: AuthModel.self) { [weak self] response in
+            debugPrint(response)
             switch response.result {
             case .success(let result):
                 print(result)
@@ -60,7 +59,6 @@ final class TokenRequestInterceptor: RequestInterceptor {
                 completion(.retry)
                 
             case .failure(let error):
-//                print(error)
                 completion(.doNotRetryWithError(error))
             }
         }
