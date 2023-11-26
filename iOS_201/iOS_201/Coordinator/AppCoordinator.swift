@@ -76,14 +76,14 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        /// UserDefault에 저장된 인증모델이 있다면 main 으로 넘어갑니다.
-        /// 토큰이 만료되었다 하더라도, 차후 서버로 요청을 통해 token 을 재발급 받기때문에 문제가 없을것같아 이렇게 만들었습니다.
-//        if let data = UserDefaults.standard.value(forKey:"authModel") as? Data,
-//           let _ = try? PropertyListDecoder().decode(AuthModel.self, from: data) {
-//            changeToMainView()
-//        } else {
+        ///  UserDefault에 저장되어있기때문에 에뮬레이터 환경이 바뀔때마다, 다시 로그인을 해서 토큰을 발급받아주어야합니다 ㅠㅠㅠ
+        ///  차후 키체인으로 변경시, 그후부턴 문제없을것입니다!!
+        if let data = UserDefaults.standard.value(forKey:"authModel") as? Data,
+           let _ = try? PropertyListDecoder().decode(AuthModel.self, from: data) {
+            changeToMainView()
+        } else {
             goToLoginView()
-//        }
+        }
         
         
     }

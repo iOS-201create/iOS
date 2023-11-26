@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 final class TokenRequestInterceptor: RequestInterceptor {
     
+    //TODO: 조금더 찾아보고 전역적으로 이쁘게 쓸수있게 수정해두겠습니다!
     /// header에 토큰을 추가합니다.
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         guard urlRequest.url?.absoluteString.hasPrefix("https://test.201-study.shop/v1") == true,

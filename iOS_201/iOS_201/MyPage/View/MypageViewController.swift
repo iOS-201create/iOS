@@ -17,8 +17,10 @@ class MypageViewController: UIViewController {
     var coordinator: MyPageTabCoordinator?
     
     var viewmodel = MyPageViewModel()
+    
     var disposeBag = DisposeBag()
     
+    /// 닉네임 & githubID 가 들어가는 vstack
     let profileVstack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -28,6 +30,7 @@ class MypageViewController: UIViewController {
         return stack
     }()
     
+    /// profile Image
     let profileImage: UIImageView = {
         let imageview = UIImageView(frame: CGRectMake(0, 0, 50, 50))
         imageview.image = UIImage(systemName: "person")
@@ -37,6 +40,7 @@ class MypageViewController: UIViewController {
         return imageview
     }()
     
+    /// 닉네임
     let userName: UILabel = {
         let label = UILabel()
         label.text = "진지한김진우"
@@ -45,7 +49,8 @@ class MypageViewController: UIViewController {
         return label
     }()
     
-    lazy var userID: UILabel = {
+    /// githubID
+    lazy var githubID: UILabel = {
         let label = UILabel()
         label.text = "jwt1234"
         label.font = .systemFont(ofSize: 12)
@@ -53,6 +58,7 @@ class MypageViewController: UIViewController {
         return label
     }()
     
+    /// 프로필수정 버튼 -> 어케동작되는지 플로우를 모르겠음
     let profileEditBtn: UIButton = {
         let button = UIButton()
         button.setTitle("프로필 수정", for: .normal)
@@ -62,7 +68,8 @@ class MypageViewController: UIViewController {
         return button
     }()
     
-    let sucessHstack: UIStackView = {
+    /// 스터디 성공률 & 필수투두 완료횟수를 담는 Hstack
+    let rateHstack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.spacing = 10
@@ -145,6 +152,7 @@ class MypageViewController: UIViewController {
         return cv
     }()
     
+    /// collectionView를 담는 UIView
     lazy var tierCollectionView: UIView = {
         let contentView = UIView()
         contentView.layer.cornerRadius = 5
@@ -217,7 +225,7 @@ class MypageViewController: UIViewController {
         viewmodel.requestMyProfile()
             .observe(on: MainScheduler.instance)
             .bind(onNext: { [weak self] profileModel in
-                self?.userID.text = profileModel.githubId
+                self?.githubID.text = profileModel.githubId
                 self?.userName.text = profileModel.nickname
                 self?.introduceTextView.text = profileModel.introduction
                 self?.profileImage.kf.setImage(with: URL(string: profileModel.profileImageUrl))
@@ -227,7 +235,7 @@ class MypageViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        
+        /// RX연습중이었슴다.. ㅋㅋ
         profileEditBtn.rx
             .tap
             .subscribe(onNext: { print("Observable이 항목을 방출 했다!") },
@@ -252,15 +260,15 @@ extension MypageViewController {
         view.addSubview(profileImage)
         view.addSubview(profileVstack)
         view.addSubview(profileEditBtn)
-        view.addSubview(sucessHstack)
+        view.addSubview(rateHstack)
         view.addSubview(tierCollectionView)
         view.addSubview(introduceTextView)
         
         profileVstack.addArrangedSubview(userName)
-        profileVstack.addArrangedSubview(userID)
+        profileVstack.addArrangedSubview(githubID)
         
-        sucessHstack.addArrangedSubview(studyVstack)
-        sucessHstack.addArrangedSubview(todoVstack)
+        rateHstack.addArrangedSubview(studyVstack)
+        rateHstack.addArrangedSubview(todoVstack)
         
         studyVstack.addArrangedSubview(studyImage)
         studyVstack.addArrangedSubview(studyLabel)
@@ -294,7 +302,7 @@ extension MypageViewController {
             make.height.equalTo(30)
         }
         
-        sucessHstack.snp.makeConstraints { make in
+        rateHstack.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(profileEditBtn.snp.bottom).offset(50)
             make.leading.equalTo(view.snp.leading).offset(50)
@@ -302,7 +310,7 @@ extension MypageViewController {
         
         tierCollectionView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(sucessHstack.snp.bottom).offset(25)
+            make.top.equalTo(rateHstack.snp.bottom).offset(25)
             make.leading.equalTo(50)
             make.height.equalTo(100)
         }
