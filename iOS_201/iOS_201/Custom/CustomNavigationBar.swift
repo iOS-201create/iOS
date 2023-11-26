@@ -45,6 +45,7 @@ class CustomNavigationBar: UIView {
     
     // MARK: - Setup
     
+    /// 이부분에서 이미지이름으로 버튼아이콘 넣게 수정했습니다!
     func configureUI(title: String, rightButtonImage: String) {
         backgroundColor = .black01
         
