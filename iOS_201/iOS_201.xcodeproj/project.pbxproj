@@ -47,6 +47,7 @@
 		E10ADAA52B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */; };
 		E10ADAA62B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */; };
 		E10ADAA72B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */; };
+		E12C2DE22B172D06000E122A /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C2DE12B172D06000E122A /* BottomButton.swift */; };
 		E1598CEF2AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
 		E1598CF02AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
 		E1598CF12AF776A400677F45 /* StudyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */; };
@@ -160,6 +161,7 @@
 		E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTabCoordinator.swift; sourceTree = "<group>"; };
 		E10ADAA02B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStep1Coordinator.swift; sourceTree = "<group>"; };
 		E10ADAA42B0747D800A286E3 /* CreateStudyStep2Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStep2Coordinator.swift; sourceTree = "<group>"; };
+		E12C2DE12B172D06000E122A /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewModel.swift; sourceTree = "<group>"; };
 		E1598CF22AF78C3400677F45 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingTableViewCell.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */,
 				E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */,
 				E15EDBFE2B15F26C008566E7 /* CreateStudyStackView.swift */,
+				E12C2DE12B172D06000E122A /* BottomButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12C2DE22B172D06000E122A /* BottomButton.swift in Sources */,
 				E1598CEF2AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1D5CE1E2AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
 				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,

@@ -48,6 +48,16 @@ class CreateStudyStep1ViewController: UIViewController {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
         }
+        
+        let bottomButton = BottomButton()
+        bottomButton.configureButton(title: "다음")
+        self.view.addSubview(bottomButton)
+        bottomButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(36)
+            make.height.equalTo(50)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
     }
 
     @objc func nextStep(_ : UITapGestureRecognizer){
