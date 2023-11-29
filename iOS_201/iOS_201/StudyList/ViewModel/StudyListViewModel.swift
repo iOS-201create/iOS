@@ -35,6 +35,7 @@ final class StudyListViewModel {
             .responseDecodable(of: [StudyListModel.Response].self ,completionHandler: { response in
                 switch response.result {
                 case .success(let data):
+                    
                     self.dataSource.append(contentsOf: data)
                     DispatchQueue.main.async {
                         completion()

@@ -44,7 +44,7 @@ class StudyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black01
-        configureNavigationBar(title: "스터디 목록", rightButtonImage: "searchBtn")
+        configureNavigationBar(title: "스터디 목록", rightButtonImage: .searchBtn)
         self.configureFilterCollectionView()
         viewModel.requestData(isPaging: false) {
             self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)

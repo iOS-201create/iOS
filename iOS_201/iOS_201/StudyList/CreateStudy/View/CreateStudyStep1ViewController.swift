@@ -11,26 +11,47 @@ import SnapKit
 class CreateStudyStep1ViewController: UIViewController {
     
     var coordinator: CreateStudyStep1Coordinator?
-    let nextStepBtn: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .yellow
-        btn.titleLabel?.text = "다음페이지"
-        return btn
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
-        self.view.addSubview(nextStepBtn)
-        nextStepBtn.snp.makeConstraints { make in
-            make.centerX.centerY.width.equalToSuperview()
-            make.height.equalTo(100)
-        }
-        nextStepBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nextStep(_ :))))
-
+        self.view.backgroundColor = .black01
+        self.configureNavigationBar(title: "스터디 만들기", rightButtonImage: .none)
+        let vm = CreateStudyViewModel()
+        configureStackView()
     }
     
+    private func configureStackView(){
+        let numOfPeopleStackView = CreateStudyStackView()
+        numOfPeopleStackView.configureNumOfPeopleTitle(title: "몇 명과 함께하시나요?", desc: "스터디 인원을 알려주세요!\n스터디원은 최소 2명, 최대 8명과 함께할 수 있습니다",icon: .people)
+        self.view.addSubview(numOfPeopleStackView)
+        numOfPeopleStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(24 + ShareConstant.shared.naviBarAndTopSafeAreaHeight)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
+        let periodStackView = CreateStudyStackView()
+        periodStackView.configureNumOfPeopleTitle(title: "스터디는 최소 몇 주간 진행되나요?", desc: "진행될 스터디가 최소 몇 주 진행되는지 알려주세요!\n스터디는 주 단위로 제공됩니다", icon: .period)
+        self.view.addSubview(periodStackView)
+         
+        periodStackView.snp.makeConstraints { make in
+            make.top.equalTo(numOfPeopleStackView.snp.bottom).offset(60)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
+        let repeatStackView = CreateStudyStackView()
+        repeatStackView.configureNumOfPeopleTitle(title: "한 주에 몇 회 진행되나요?", desc: "진행될 스터디가 한 주에 몇 회 진행되는지 알려주세요!\n정확한 요일은 스터디가 시작될 때 입력할 수 있습니다", icon: .cycle)
+        self.view.addSubview(repeatStackView)
+        repeatStackView.snp.makeConstraints { make in
+            make.top.equalTo(periodStackView.snp.bottom).offset(60)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+    }
+
     @objc func nextStep(_ : UITapGestureRecognizer){
         self.coordinator?.showNextStep()
     }
 }
+

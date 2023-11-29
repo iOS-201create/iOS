@@ -216,7 +216,7 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black01
-        configureNavigationBar(title: "마이페이지", rightButtonImage: "settingBtn")
+        configureNavigationBar(title: "마이페이지", rightButtonImage: .settingBtn)
         collectionView.dataSource = self
         collectionView.delegate = self
         addView()

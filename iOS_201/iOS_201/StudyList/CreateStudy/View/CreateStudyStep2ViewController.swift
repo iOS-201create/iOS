@@ -13,7 +13,7 @@ class CreateStudyStep2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .black01
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.coordinator?.finish()

@@ -20,10 +20,13 @@ class StudyTabCoordinator: TabCoordinator {
     }
     
     func start() {
-        let vc = StudyListViewController()
-        vc.coordinator = self
-        vc.tabBarItem = self.tabBarItem
-        navigationController.pushViewController(vc, animated: true)
+//        let vc = StudyListViewController()
+//        vc.coordinator = self
+//        vc.tabBarItem = self.tabBarItem
+//        navigationController.pushViewController(vc, animated: true)
+        
+        //testCode
+        showCreateStudy()
     }
     
      func showCreateStudy(){

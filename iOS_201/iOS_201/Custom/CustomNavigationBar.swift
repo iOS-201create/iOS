@@ -46,7 +46,7 @@ class CustomNavigationBar: UIView {
     // MARK: - Setup
     
     /// 이부분에서 이미지이름으로 버튼아이콘 넣게 수정했습니다!
-    func configureUI(title: String, rightButtonImage: String) {
+    func configureUI(title: String, rightButtonImage: NaviRightButton) {
         backgroundColor = .black01
         
         addSubview(titleLabel)
@@ -63,12 +63,20 @@ class CustomNavigationBar: UIView {
             make.leading.trailing.bottom.equalToSuperview()
         }
         
+        if rightButtonImage == .none { return }
+        
         addSubview(rightButton)
-        rightButton.setImage(UIImage(named: rightButtonImage), for: .normal)
+        rightButton.setImage(UIImage(named: rightButtonImage.rawValue), for: .normal)
         rightButton.snp.makeConstraints { make in
             make.width.height.equalTo(20)
             make.centerY.equalToSuperview()
             make.trailingMargin.equalToSuperview().inset(20)
         }
     }
+}
+
+enum NaviRightButton : String{
+    case none = ""
+    case searchBtn
+    case settingBtn
 }

@@ -56,6 +56,10 @@
 		E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */; };
 		E1598CF82AF7935500677F45 /* LodingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */; };
 		E1598CF92AF7935500677F45 /* LodingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */; };
+		E15EDBF82B15F1F4008566E7 /* CreateStudyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EDBF72B15F1F4008566E7 /* CreateStudyViewModel.swift */; };
+		E15EDBFA2B15F22A008566E7 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EDBF92B15F22A008566E7 /* Encodable.swift */; };
+		E15EDBFD2B15F247008566E7 /* CreateStudyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EDBFC2B15F247008566E7 /* CreateStudyModel.swift */; };
+		E15EDBFF2B15F26C008566E7 /* CreateStudyStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EDBFE2B15F26C008566E7 /* CreateStudyStackView.swift */; };
 		E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A32AE686A900141952 /* AppDelegate.swift */; };
 		E16C92A62AE686A900141952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C92A52AE686A900141952 /* SceneDelegate.swift */; };
 		E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E16C92AC2AE686A900141952 /* iOS_201.xcdatamodeld */; };
@@ -82,6 +86,12 @@
 		E1799C012AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
 		E1799C022AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
 		E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1799C002AF4BB3300A69A33 /* MessageViewController.swift */; };
+		E17E0D432B15EF8D003CD6ED /* ShareConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E0D422B15EF8D003CD6ED /* ShareConstant.swift */; };
+		E17E0D442B15EF8D003CD6ED /* ShareConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E0D422B15EF8D003CD6ED /* ShareConstant.swift */; };
+		E17E0D452B15EF8D003CD6ED /* ShareConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E0D422B15EF8D003CD6ED /* ShareConstant.swift */; };
+		E17E0D472B15EF99003CD6ED /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E0D462B15EF99003CD6ED /* UILabel.swift */; };
+		E17E0D482B15EF99003CD6ED /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E0D462B15EF99003CD6ED /* UILabel.swift */; };
+		E17E0D492B15EF99003CD6ED /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E0D462B15EF99003CD6ED /* UILabel.swift */; };
 		E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE192AF6418C00B02823 /* StudyListModel.swift */; };
 		E1D5CE1B2AF6418C00B02823 /* StudyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE192AF6418C00B02823 /* StudyListModel.swift */; };
 		E1D5CE1C2AF6418C00B02823 /* StudyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5CE192AF6418C00B02823 /* StudyListModel.swift */; };
@@ -153,6 +163,10 @@
 		E1598CEE2AF776A400677F45 /* StudyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewModel.swift; sourceTree = "<group>"; };
 		E1598CF22AF78C3400677F45 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E1598CF62AF7935500677F45 /* LodingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingTableViewCell.swift; sourceTree = "<group>"; };
+		E15EDBF72B15F1F4008566E7 /* CreateStudyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyViewModel.swift; sourceTree = "<group>"; };
+		E15EDBF92B15F22A008566E7 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		E15EDBFC2B15F247008566E7 /* CreateStudyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyModel.swift; sourceTree = "<group>"; };
+		E15EDBFE2B15F26C008566E7 /* CreateStudyStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudyStackView.swift; sourceTree = "<group>"; };
 		E16C92A02AE686A900141952 /* iOS_201.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_201.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16C92A32AE686A900141952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E16C92A52AE686A900141952 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +185,8 @@
 		E1799BF82AF4BB1F00A69A33 /* StudyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListViewController.swift; sourceTree = "<group>"; };
 		E1799BFC2AF4BB2900A69A33 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		E1799C002AF4BB3300A69A33 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		E17E0D422B15EF8D003CD6ED /* ShareConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareConstant.swift; sourceTree = "<group>"; };
+		E17E0D462B15EF99003CD6ED /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		E1D5CE192AF6418C00B02823 /* StudyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyListModel.swift; sourceTree = "<group>"; };
 		E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		E1D5CE252AF669F000B02823 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
@@ -377,9 +393,9 @@
 		E10ADA8A2B05B39400A286E3 /* CreateStudy */ = {
 			isa = PBXGroup;
 			children = (
+				E15EDBFB2B15F240008566E7 /* Model */,
+				E15EDBF62B15F1EA008566E7 /* ViewModel */,
 				E10ADA9F2B0747A500A286E3 /* Coordinator */,
-				E10ADA8D2B05B3F500A286E3 /* ViewModel */,
-				E10ADA8C2B05B3F300A286E3 /* Model */,
 				E10ADA8B2B05B3EF00A286E3 /* View */,
 			);
 			path = CreateStudy;
@@ -392,20 +408,6 @@
 				E10ADA962B06F6F200A286E3 /* CreateStudyStep2ViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E10ADA8C2B05B3F300A286E3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E10ADA8D2B05B3F500A286E3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E10ADA9F2B0747A500A286E3 /* Coordinator */ = {
@@ -423,6 +425,22 @@
 				E10ADA9B2B0741F500A286E3 /* StudyTabCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E15EDBF62B15F1EA008566E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E15EDBF72B15F1F4008566E7 /* CreateStudyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E15EDBFB2B15F240008566E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E15EDBFC2B15F247008566E7 /* CreateStudyModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E16C92972AE686A900141952 = {
@@ -450,6 +468,7 @@
 		E16C92A22AE686A900141952 /* iOS_201 */ = {
 			isa = PBXGroup;
 			children = (
+				E17E0D412B15EF81003CD6ED /* Utilities */,
 				77F681B12B0D16C4003B8AE2 /* RequestInterceptor */,
 				002095612AF77A1100B02DE4 /* Coordinator */,
 				002095562AF74C3600B02DE4 /* Model */,
@@ -502,6 +521,7 @@
 			children = (
 				E1799BE62AF4ADDC00A69A33 /* CustomTabBarViewController.swift */,
 				E1D5CE1D2AF6480200B02823 /* CustomNavigationBar.swift */,
+				E15EDBFE2B15F26C008566E7 /* CreateStudyStackView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -511,8 +531,10 @@
 			children = (
 				E1799BEC2AF4B72C00A69A33 /* UIColor.swift */,
 				E1598CF22AF78C3400677F45 /* UIViewController.swift */,
+				E17E0D462B15EF99003CD6ED /* UILabel.swift */,
 				00A10AA92AF65947009DF4BC /* UIImage.swift */,
 				0020956E2AF78BDF00B02DE4 /* UITextField.swift */,
+				E15EDBF92B15F22A008566E7 /* Encodable.swift */,
 				00C784692AF90D2A00A0FFA7 /* UITextView.swift */,
 				003DB96A2AF9EDFC00903AF8 /* UIButton.swift */,
 				77CC87C82B0C570000260A2C /* UIImageView.swift */,
@@ -557,6 +579,14 @@
 				003EA6BD2B0B399D000C8436 /* Coordinator */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		E17E0D412B15EF81003CD6ED /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E17E0D422B15EF8D003CD6ED /* ShareConstant.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		E1D5CE162AF6416600B02823 /* View */ = {
@@ -867,15 +897,19 @@
 				E1799BFD2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				77F681B52B0D1DF4003B8AE2 /* ProfileModel.swift in Sources */,
 				00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */,
+				E15EDBF82B15F1F4008566E7 /* CreateStudyViewModel.swift in Sources */,
 				E10ADA8F2B05B40900A286E3 /* CreateStudyStep1ViewController.swift in Sources */,
+				E15EDBFA2B15F22A008566E7 /* Encodable.swift in Sources */,
 				002095672AF77E1200B02DE4 /* UserService.swift in Sources */,
 				0020956F2AF78BDF00B02DE4 /* UITextField.swift in Sources */,
 				77F681B32B0D16FB003B8AE2 /* TokenRequestInterceptor.swift in Sources */,
 				E1799BED2AF4B72C00A69A33 /* UIColor.swift in Sources */,
 				E1598CF72AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
+				E15EDBFF2B15F26C008566E7 /* CreateStudyStackView.swift in Sources */,
 				E1D5CE1A2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E10ADAA12B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */,
 				0043194A2B0B3E150031B1BF /* MyPageTabCoordinator.swift in Sources */,
+				E17E0D472B15EF99003CD6ED /* UILabel.swift in Sources */,
 				E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */,
 				0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */,
@@ -893,6 +927,7 @@
 				002095552AF7435A00B02DE4 /* LoginViewModel.swift in Sources */,
 				E10ADAA52B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */,
 				00A10AB22AF6ED8A009DF4BC /* AuthService.swift in Sources */,
+				E17E0D432B15EF8D003CD6ED /* ShareConstant.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
 				E1799BF92AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */,
@@ -906,6 +941,7 @@
 				002095652AF77AD700B02DE4 /* OnBoardingViewModel.swift in Sources */,
 				00C7846A2AF90D2A00A0FFA7 /* UITextView.swift in Sources */,
 				E10ADA972B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */,
+				E15EDBFD2B15F247008566E7 /* CreateStudyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,10 +960,12 @@
 				E1598CF82AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E10ADA982B06F6F200A286E3 /* CreateStudyStep2ViewController.swift in Sources */,
 				E10ADAA22B0747BC00A286E3 /* CreateStudyStep1Coordinator.swift in Sources */,
+				E17E0D442B15EF8D003CD6ED /* ShareConstant.swift in Sources */,
 				E1799BFE2AF4BB2900A69A33 /* MypageViewController.swift in Sources */,
 				E1598CF42AF78C3400677F45 /* UIViewController.swift in Sources */,
 				E1799BFA2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E10ADA9D2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */,
+				E17E0D482B15EF99003CD6ED /* UILabel.swift in Sources */,
 				E1598CF02AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1799BF62AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
 				E10ADAA62B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */,
@@ -943,6 +981,7 @@
 				E1D5CE202AF6480200B02823 /* CustomNavigationBar.swift in Sources */,
 				E1799BF72AF4BB0000A69A33 /* HomeViewController.swift in Sources */,
 				E16C92CA2AE686AA00141952 /* iOS_201UITestsLaunchTests.swift in Sources */,
+				E17E0D452B15EF8D003CD6ED /* ShareConstant.swift in Sources */,
 				E1598CF12AF776A400677F45 /* StudyListViewModel.swift in Sources */,
 				E1799C032AF4BB3300A69A33 /* MessageViewController.swift in Sources */,
 				E10ADA9E2B0741F600A286E3 /* StudyTabCoordinator.swift in Sources */,
@@ -952,6 +991,7 @@
 				E1598CF92AF7935500677F45 /* LodingTableViewCell.swift in Sources */,
 				E16C92C82AE686AA00141952 /* iOS_201UITests.swift in Sources */,
 				E1F73B382AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
+				E17E0D492B15EF99003CD6ED /* UILabel.swift in Sources */,
 				E1799BFB2AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E1D5CE1C2AF6418C00B02823 /* StudyListModel.swift in Sources */,
 				E1799BE92AF4ADDC00A69A33 /* CustomTabBarViewController.swift in Sources */,
@@ -1111,7 +1151,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS_201/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1141,7 +1181,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS_201/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

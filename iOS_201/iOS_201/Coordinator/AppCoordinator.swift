@@ -108,6 +108,4 @@ class AppCoordinator: Coordinator {
         vc.appCoordinator = self
         self.navigationController.view.window?.rootViewController = vc
     }
-    
-
 }
