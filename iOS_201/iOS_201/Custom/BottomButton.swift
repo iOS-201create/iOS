@@ -23,6 +23,7 @@ class BottomButton: UIView {
         configureTitleLabel(title: title)
         self.layer.cornerRadius = 16
     }
+    
     func enable(){
         titleLabel.textColor = .white
         self.backgroundColor = UIColor(hexCode: "#39D353", alpha: 0.9)

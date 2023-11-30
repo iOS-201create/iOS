@@ -9,6 +9,9 @@ import UIKit
 
 class CreateStudyStackView: UIStackView {
     
+    let inputLb = UILabel()
+    var icon: CreateStudyStackView.Icon?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -19,6 +22,7 @@ class CreateStudyStackView: UIStackView {
     
     
     func configureNumOfPeopleTitle(title: String, desc: String, icon: CreateStudyStackView.Icon){
+        self.icon = icon
         self.axis = .vertical
         self.distribution = .equalSpacing
         
@@ -41,7 +45,6 @@ class CreateStudyStackView: UIStackView {
         descLb.snp.makeConstraints { make in
             make.height.equalTo(34)
         }
-        
         self.setCustomSpacing(12, after: descLb)
 
         let filedBox = UIView()
@@ -54,6 +57,14 @@ class CreateStudyStackView: UIStackView {
             make.height.equalTo(56)
         }
         
+        inputLb.font = UIFont(name: "Pretendard-Regular", size: 16)
+        disable()
+        filedBox.addSubview(inputLb)
+        inputLb.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(24)
+        }
+        
         let imgView = UIImageView()
         imgView.image = UIImage(named: icon.rawValue)
         filedBox.addSubview(imgView)
@@ -62,6 +73,24 @@ class CreateStudyStackView: UIStackView {
             make.trailing.equalToSuperview().inset(24)
             make.centerY.equalToSuperview()
         }
+    }
+    
+    func enable(){
+        self.inputLb.textColor = .white
+    }
+    
+    func disable(){
+        switch icon {
+        case .people:
+            inputLb.text = "2명"
+        case .period:
+            inputLb.text = "약 8주간 진행"
+        case .cycle:
+            inputLb.text = "1회"
+        case nil:
+            return
+        }
+        self.inputLb.textColor = UIColor(hexCode: "#797F8A")
     }
     
     
