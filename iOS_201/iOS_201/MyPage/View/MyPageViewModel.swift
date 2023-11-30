@@ -14,9 +14,17 @@ class MyPageViewModel {
     
     var tierImages = ["tier1", "tier2", "tier3", "tier4", "tier5"]
     
+    var MOKE_collectionImages: [UIImage] = []
+    
     var collectionImages: [UIImage] = []
     
     var disposable = DisposeBag()
+    
+    init() {
+        for _ in 0 ..< 20 {
+            MOKE_collectionImages.append(UIImage(named: "tier1")!)
+        }
+    }
     
     func requestMyProfile() -> Observable<ProfileModel> {
         return Observable.create { emit in

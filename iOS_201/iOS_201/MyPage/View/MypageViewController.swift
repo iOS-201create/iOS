@@ -133,6 +133,7 @@ class MypageViewController: UIViewController {
     
     let todoRate: UILabel = {
         let label = UILabel()
+        label.text = "76번"
         label.textColor = UIColor(hexCode: "A2FF86")
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
@@ -140,7 +141,8 @@ class MypageViewController: UIViewController {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        // 이게뭐길래 사이즈가 리사이즈 안된거지?? -> 자동으로 사이즈 잡아주는건가?
+//        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.bounces = false
@@ -163,7 +165,7 @@ class MypageViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
             make.horizontalEdges.equalToSuperview().inset(12)
-            make.height.equalTo(80)
+            make.height.equalTo(60)
             
         }
         
@@ -217,23 +219,23 @@ class MypageViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black01
         configureNavigationBar(title: "마이페이지", rightButtonImage: "settingBtn")
-        collectionView.dataSource = self
-        collectionView.delegate = self
         addView()
         setLayout()
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        viewmodel.requestMyProfile()
-            .observe(on: MainScheduler.instance)
-            .bind(onNext: { [weak self] profileModel in
-                self?.githubID.text = profileModel.githubId
-                self?.userName.text = profileModel.nickname
-                self?.introduceTextView.text = profileModel.introduction
-                self?.profileImage.kf.setImage(with: URL(string: profileModel.profileImageUrl))
-                self?.studyRate.text = "\(profileModel.successRate)회"
-                self?.todoRate.text = "\(profileModel.successfulRoundCount)회"
-                self?.collectionView.reloadData()
-            })
-            .disposed(by: disposeBag)
+//        viewmodel.requestMyProfile()
+//            .observe(on: MainScheduler.instance)
+//            .bind(onNext: { [weak self] profileModel in
+//                self?.githubID.text = profileModel.githubId
+//                self?.userName.text = profileModel.nickname
+//                self?.introduceTextView.text = profileModel.introduction
+//                self?.profileImage.kf.setImage(with: URL(string: profileModel.profileImageUrl))
+//                self?.studyRate.text = "\(profileModel.successRate)회"
+//                self?.todoRate.text = "\(profileModel.successfulRoundCount)회"
+//                self?.collectionView.reloadData()
+//            })
+//            .disposed(by: disposeBag)
         
         /// RX연습중이었슴다.. ㅋㅋ
         profileEditBtn.rx
@@ -312,24 +314,23 @@ extension MypageViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(rateHstack.snp.bottom).offset(25)
             make.leading.equalTo(50)
-            make.height.equalTo(100)
+            make.height.equalTo(90)
         }
         
         introduceTextView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(tierCollectionView.snp.bottom).offset(44)
+            make.top.equalTo(tierCollectionView.snp.bottom).offset(10)
             make.leading.equalTo(view.snp.leading).offset(20)
             make.bottom.equalToSuperview().inset(10)
         }
     }
 }
 
-
 // MARK: - UICollectionViewDelegate
 
 extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewmodel.collectionImages.count
+        return viewmodel.MOKE_collectionImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -338,16 +339,17 @@ extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollection
             fatalError("Fail to Dequeue TodoCell")
         }
          
-        let image = viewmodel.collectionImages[indexPath.row]
+        let image = viewmodel.MOKE_collectionImages[indexPath.row]
         cell.configure(with: image)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         // 24 = collectionview margin, 36 = sum of size between collectionViewCll
         let size = ((self.tierCollectionView.frame.size.width - 24 - 36) / 10)
+        
+//        let size = self.tierCollectionView.frame.size.width / 10
         
         return CGSize(width: size, height: size)
     }
@@ -355,7 +357,7 @@ extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
-    
+//    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
