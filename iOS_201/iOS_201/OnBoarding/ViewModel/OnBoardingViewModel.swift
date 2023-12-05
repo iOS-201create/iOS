@@ -92,6 +92,7 @@ extension OnBoardingViewModel {
     /// 닉네임중복여부 검사
     func nicknameInput() {
         UserService.share.shouldEnalbeNickname(nickname: resultNickname) { result in
+//            print(re)
             switch result {
             case .success(let nicknameModel):
                 if !nicknameModel.exists {

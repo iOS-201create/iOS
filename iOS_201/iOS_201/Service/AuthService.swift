@@ -33,16 +33,22 @@ class AuthService {
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers
-        ).responseDecodable(of: AuthModel.self) { [weak self] response in
-            switch response.result {
-            case .success(let result):
-                self?.authModel = result
-                self?.saveToken(authModel: result)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        ).response { result in
+//            print(result)
+            debugPrint(result)
+//            let data = JSONDecoder().decode(AuthModel.self, from: re)
         }
+//        .responseDecodable(of: AuthModel.self) { [weak self] response in
+//            debugPrint(response.result)
+//            switch response.result {
+//            case .success(let result):
+//                self?.authModel = result
+//                self?.saveToken(authModel: result)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
     
     //TODO: 차후 Keychain으로 변경할 예정입니다!

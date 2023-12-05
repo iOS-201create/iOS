@@ -40,4 +40,5 @@ class TodoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.myImageView.image = nil
     }
+    
 }

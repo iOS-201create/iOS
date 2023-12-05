@@ -22,6 +22,7 @@ class UserService {
                    method: .get,
                    headers: headers
         ).responseDecodable(of: NicknameModel.self) { response in
+            print(response)
             switch response.result {
             case .success(let data):
                 
@@ -32,6 +33,7 @@ class UserService {
                 
                 switch statusCode {
                 case 200:
+                    
                     completion(.success(data))
                 default:
                     if let errorData = response.data,

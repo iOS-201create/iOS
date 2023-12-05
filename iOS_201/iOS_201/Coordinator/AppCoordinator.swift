@@ -67,7 +67,7 @@ class AppCoordinator: Coordinator {
     
     // CustomTabBarController.swift에서 각 객체를 생성하여 넣습니다.
     var studyTabCoordinator: StudyTabCoordinator? = nil
-//    var homeTabCoordinator: HomeTabCoordinator? = nil
+    var homeTabCoordinator: HomeTabCoordinator? = nil
 //    var MessageTabCoordinator: MessageTabCoordinator? = nil
     var myPageTabCoordinator: MyPageTabCoordinator? = nil
     
@@ -109,5 +109,4 @@ class AppCoordinator: Coordinator {
         self.navigationController.view.window?.rootViewController = vc
     }
     
-
 }

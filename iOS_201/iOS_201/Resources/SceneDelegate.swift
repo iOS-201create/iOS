@@ -61,7 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if url.absoluteString.starts(with: "example://") {
                 if let code = url.absoluteString.split(separator: "=").last.map({ String($0) }) {
                     coordinator?.goToOnBoardingView()
-                    
+                    print(code)
                     AuthService.share.requestToken(with: code)
                 }
             }
