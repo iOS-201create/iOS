@@ -145,7 +145,6 @@ class HomeTableViewCell: UITableViewCell {
         defaultText.snp.makeConstraints { make in
             make.top.equalTo(bottomBolder.snp.bottom).offset(12)
             make.leading.equalTo(containerView.snp.leading).offset(20)
-            make.trailing.equalTo(dateCount.snp.leading).offset(-10)
         }
         
         dateCount.snp.makeConstraints { make in
