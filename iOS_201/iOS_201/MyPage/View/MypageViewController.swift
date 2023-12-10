@@ -77,6 +77,7 @@ class MypageViewController: UIViewController {
         return stack
     }()
     
+    /// 스터디성공률을 담는 vstack
     let studyVstack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -86,12 +87,14 @@ class MypageViewController: UIViewController {
         return stack
     }()
     
+    /// 스터디성공률의 Image
     let studyImage: UIImageView = {
         let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         imageview.image = UIImage(named: "studyImage")?.resize(targetSize: CGSize(width: 24, height: 24))
         return imageview
     }()
     
+    /// 스터디성공률의 기본text
     let studyLabel: UILabel = {
         let label = UILabel()
         label.text = "스터디 성공률"
@@ -100,6 +103,7 @@ class MypageViewController: UIViewController {
         return label
     }()
     
+    /// 스터디성공률
     let studyRate: UILabel = {
         let label = UILabel()
         label.text = "76.2%"
@@ -108,6 +112,7 @@ class MypageViewController: UIViewController {
         return label
     }()
     
+    /// 투두성공률을 담는 vstack
     let todoVstack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -117,12 +122,14 @@ class MypageViewController: UIViewController {
         return stack
     }()
     
+    /// 투두성공률의 image
     let todoImage: UIImageView = {
         let imageview = UIImageView()
         imageview.image = UIImage(named: "todoImage")?.resize(targetSize: CGSize(width: 24, height: 24))
         return imageview
     }()
     
+    /// 투두성공률의 기본text
     let todoLabel: UILabel = {
         let label = UILabel()
         label.text = "필수투두 완료횟수"
@@ -131,6 +138,7 @@ class MypageViewController: UIViewController {
         return label
     }()
     
+    /// 투두성공률횟수
     let todoRate: UILabel = {
         let label = UILabel()
         label.text = "76번"
@@ -139,10 +147,9 @@ class MypageViewController: UIViewController {
         return label
     }()
     
+    /// successRate를 보여줄 collectionView
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        // 이게뭐길래 사이즈가 리사이즈 안된거지?? -> 자동으로 사이즈 잡아주는건가?
-//        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.bounces = false
@@ -154,13 +161,14 @@ class MypageViewController: UIViewController {
         return cv
     }()
     
-    /// collectionView를 담는 UIView
+    /// collectionView 와 collectionview하단의 티어표를 합친 뷰
     lazy var tierCollectionView: UIView = {
+        
+        /// collectionView 와 collectionview하단의 티어표를 합친 뷰
         let contentView = UIView()
         contentView.layer.cornerRadius = 5
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.gray.cgColor
-        
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
@@ -173,12 +181,14 @@ class MypageViewController: UIViewController {
         stack.axis = .horizontal
         stack.spacing = 8
         
+        /// collectionView 하단의 티어표 글자
         let less = UILabel()
         less.text = "less"
         less.font = .systemFont(ofSize: 8)
         less.textColor = .gray
         stack.addArrangedSubview(less)
         
+        /// collectionView 하단의 티어표
         viewmodel.tierImages.forEach {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 8, height: 8))
             imageView.image = UIImage(named: $0)?.resize(targetSize: CGSize(width: 8, height: 8))
@@ -186,6 +196,7 @@ class MypageViewController: UIViewController {
             stack.addArrangedSubview(imageView)
         }
         
+        /// collectionView 하단의 티어표 글자2
         let more = UILabel()
         more.text = "more"
         more.font = .systemFont(ofSize: 8)
@@ -202,6 +213,7 @@ class MypageViewController: UIViewController {
         return contentView
     }()
     
+    /// 자기소개뷰
     private lazy var introduceTextView: UITextView = {
         let view = UITextView()
         view.textColor = .white
@@ -221,42 +233,38 @@ class MypageViewController: UIViewController {
         configureNavigationBar(title: "마이페이지", rightButtonImage: "settingBtn")
         addView()
         setLayout()
+        bind()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-//        viewmodel.requestMyProfile()
-//            .observe(on: MainScheduler.instance)
-//            .bind(onNext: { [weak self] profileModel in
-//                self?.githubID.text = profileModel.githubId
-//                self?.userName.text = profileModel.nickname
-//                self?.introduceTextView.text = profileModel.introduction
-//                self?.profileImage.kf.setImage(with: URL(string: profileModel.profileImageUrl))
-//                self?.studyRate.text = "\(profileModel.successRate)회"
-//                self?.todoRate.text = "\(profileModel.successfulRoundCount)회"
-//                self?.collectionView.reloadData()
-//            })
-//            .disposed(by: disposeBag)
-        
-        /// RX연습중이었슴다.. ㅋㅋ
-        profileEditBtn.rx
-            .tap
-            .subscribe(onNext: { print("Observable이 항목을 방출 했다!") },
-                       onError: { error in print("에러가 발생 했다!") },
-                       onCompleted: { print("해당 이벤트가 끝났다!") }
-            )
-            .disposed(by: disposeBag)
-        
-        
     }
         
     
+}
+
+// MARK: - bind
+
+extension MypageViewController {
+    func bind() {
+        viewmodel.requestMyProfile()
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: { [weak self] profileModel in
+                self?.githubID.text = profileModel.githubId
+                self?.userName.text = profileModel.nickname
+                self?.introduceTextView.text = profileModel.introduction
+                self?.profileImage.kf.setImage(with: URL(string: profileModel.profileImageUrl))
+                self?.studyRate.text = "\(profileModel.successRate)회"
+                self?.todoRate.text = "\(profileModel.successfulRoundCount)회"
+                self?.collectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+    }
 }
 
 // MARK: - Layout
 
 extension MypageViewController {
     func addView() {
-
         view.addSubview(profileImage)
         view.addSubview(profileVstack)
         view.addSubview(profileEditBtn)
@@ -328,7 +336,7 @@ extension MypageViewController {
 
 extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewmodel.MOKE_collectionImages.count
+        return viewmodel.collectionImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -337,25 +345,24 @@ extension MypageViewController: UICollectionViewDelegateFlowLayout, UICollection
             fatalError("Fail to Dequeue TodoCell")
         }
          
-        let image = viewmodel.MOKE_collectionImages[indexPath.row]
+        let image = viewmodel.collectionImages[indexPath.row]
         cell.configure(with: image)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // 24 = collectionview margin, 36 = sum of size between collectionViewCll
+        
+        // 24 = 좌우 패딩
+        // 36 = cellSpacing 4 * 9
         let size = ((self.tierCollectionView.frame.size.width - 24 - 36) / 10)
-        
-//        let size = self.tierCollectionView.frame.size.width / 10
-        
         return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
-//    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }

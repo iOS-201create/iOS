@@ -35,10 +35,11 @@ class CustomTabBarViewController: UITabBarController {
         let nav = UINavigationController()
         let item = configureTabBarItemTitle(title: "홈", imageName: "homeTab")
         let coordinator = HomeTabCoordinator(navigationController: nav)
+        
         coordinator.tabBarItem = item
         coordinator.delegate = appCoordinator
         coordinator.start()
-        self.appCoordinator?.homeTabCoordinator = HomeTabCoordinator(navigationController: nav)
+        self.appCoordinator?.homeTabCoordinator = coordinator
         
         return nav
     }
@@ -70,7 +71,7 @@ class CustomTabBarViewController: UITabBarController {
         coordinator.tabBarItem = item
         coordinator.delegate = appCoordinator
         coordinator.start()
-        self.appCoordinator?.myPageTabCoordinator = MyPageTabCoordinator(navigationController: nav)
+        self.appCoordinator?.myPageTabCoordinator = coordinator
         return nav
     }
     

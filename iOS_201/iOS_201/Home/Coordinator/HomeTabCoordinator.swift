@@ -22,14 +22,16 @@ class HomeTabCoordinator: TabCoordinator {
         let vc = HomeViewController()
         vc.coordinator = self
         vc.tabBarItem = self.tabBarItem
+        childCoordinators.append(self)
         navigationController.pushViewController(vc, animated: true)
         
     }
     
     func finish() {}
     
-    func goToFeedView() {
-        let coordinator = FeedCoordinator(childCoordinators: childCoordinators, navigationController: navigationController)
+    /// 스터디클릭시, 해당스터디의 정보 필요.
+    func goToFeedView(studyData: MyStudyModel) {
+        let coordinator = FeedCoordinator(childCoordinators: childCoordinators, navigationController: navigationController,studyData: studyData)
         childCoordinators.append(coordinator)
         coordinator.start()
     }

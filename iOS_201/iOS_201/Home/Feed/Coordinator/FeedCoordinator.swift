@@ -15,16 +15,24 @@ class FeedCoordinator: NavigationCoordinator {
     
     var navigationController: UINavigationController
     
-    init(childCoordinators: [Coordinator], navigationController: UINavigationController) {
+    /// FeedViewModel에 넘겨줄 스터디정보
+    var studyData: MyStudyModel
+    
+    init(childCoordinators: [Coordinator], navigationController: UINavigationController, studyData: MyStudyModel) {
         self.childCoordinators = childCoordinators
         self.navigationController = navigationController
+        self.studyData = studyData
     }
     
     func start() {
-        let vc = FeedViewController()
-        vc.coordinator = self
+        let viewmodel = FeedViewModel(studyData: studyData)
+        let vc = FeedViewController(coordinator: self, viewmodel: viewmodel)
         navigationController.pushViewController(vc, animated: true)
+
     }
     
+    func pop() {
+        navigationController.popViewController(animated: true)
+    }
 
 }

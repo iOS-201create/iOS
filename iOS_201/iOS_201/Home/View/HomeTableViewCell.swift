@@ -44,6 +44,7 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
+    //TODO: 뷰마다 함수형으로 나누어서 레이아웃 짜도록 수정하기.
     func setTitle(data: MyStudyModel) {
         /// 스터디 이름
         let titleLabel = UILabel()

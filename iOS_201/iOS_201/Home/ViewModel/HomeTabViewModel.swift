@@ -14,6 +14,7 @@ class HomeTabViewModel {
     
     var data : [MyStudyModel?] = []
     
+    // 스터디가 아직은없어서 []를 리턴하여 하단에 테스트전용을 만들어두었습니다.
     func requestHomeFeed() -> Observable<[MyStudyModel?]> {
         return Observable.create { emit in
             let url = "https://test.201-study.shop/v1/home"
@@ -39,18 +40,11 @@ class HomeTabViewModel {
         }
     }
     
+    /// 테스트용
     func testLoad() -> Observable<[MyStudyModel?]> {
         self.data = MyStudyModel.MOCK_studyModel
         return Observable.just(data)
     }
-    
-//    func requestHomeFeed2() -> Observable<[MyStudyModel]>? {
-//        if let data = data {
-//            return Observable.of(data)
-//        } else {
-//            return nil
-//        }
-//    }
     
 }
 

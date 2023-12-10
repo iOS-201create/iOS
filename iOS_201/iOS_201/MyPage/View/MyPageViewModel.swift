@@ -12,20 +12,15 @@ import RxSwift
 
 class MyPageViewModel {
     
+    /// collectionview하단에 보여질 티어종류
     var tierImages = ["tier1", "tier2", "tier3", "tier4", "tier5"]
     
-    var MOKE_collectionImages: [UIImage] = []
-    
+    /// successRate에 따른 collectionView 데이터
     var collectionImages: [UIImage] = []
     
     var disposable = DisposeBag()
     
-    init() {
-        for _ in 0 ..< 20 {
-            MOKE_collectionImages.append(UIImage(named: "tier1")!)
-        }
-    }
-    
+    /// request 나의프로필
     func requestMyProfile() -> Observable<ProfileModel> {
         return Observable.create { emit in
             let url = "https://test.201-study.shop/v1/members/my"
@@ -52,18 +47,21 @@ class MyPageViewModel {
         
     }
     
+    /// successRate에 따른 collectionview 데이터 설정
+    ///  (successRate / 20) 만큼 자신의 티어로 색을칠하게 됌.
     func setTierProgressImage(tierProgress: Int, tier: Int) {
+        // tierProgress가 5 이상인 경우
         if tierProgress >= 5 {
             for _ in 1 ..< tierProgress / 5 {
                 self.collectionImages.append(UIImage(named: "tier\(tier)")!)
             }
             
             for _ in tierProgress / 5 ... 20 {
-                self.collectionImages.append(UIImage(named: "tier2")!)
+                self.collectionImages.append(UIImage(named: "tier6")!)
             }
         } else {
             for _ in 1 ... 20 {
-                self.collectionImages.append(UIImage(named: "tier\(tier)")!)
+                self.collectionImages.append(UIImage(named: "tier6")!)
             }
         }
         

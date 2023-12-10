@@ -23,6 +23,9 @@
 		0043194A2B0B3E150031B1BF /* MyPageTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004319492B0B3E150031B1BF /* MyPageTabCoordinator.swift */; };
 		004D73A82B0A47DC00D8F96E /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D73A72B0A47DC00D8F96E /* LoginCoordinator.swift */; };
 		004D73AA2B0A4B0100D8F96E /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D73A92B0A4B0100D8F96E /* OnBoardingCoordinator.swift */; };
+		006AAB102B23CC51006C36C6 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AAB0F2B23CC51006C36C6 /* FeedViewModel.swift */; };
+		006AAB122B247AEA006C36C6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AAB112B247AEA006C36C6 /* ProfileCollectionViewCell.swift */; };
+		006AAB142B252DE3006C36C6 /* StudyMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AAB132B252DE3006C36C6 /* StudyMembers.swift */; };
 		00A10AA62AF650CD009DF4BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA52AF650CD009DF4BC /* LoginViewController.swift */; };
 		00A10AAA2AF65947009DF4BC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AA92AF65947009DF4BC /* UIImage.swift */; };
 		00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A10AAC2AF66B2C009DF4BC /* OnBoardingViewController.swift */; };
@@ -138,6 +141,9 @@
 		004319492B0B3E150031B1BF /* MyPageTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTabCoordinator.swift; sourceTree = "<group>"; };
 		004D73A72B0A47DC00D8F96E /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		004D73A92B0A4B0100D8F96E /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
+		006AAB0F2B23CC51006C36C6 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		006AAB112B247AEA006C36C6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		006AAB132B252DE3006C36C6 /* StudyMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMembers.swift; sourceTree = "<group>"; };
 		00A10AA52AF650CD009DF4BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00A10AA92AF65947009DF4BC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		00A10AAC2AF66B2C009DF4BC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				000B41452B18AA630068FC78 /* HomeTabCoordinator.swift */,
-				00FD44672B1E17B100534B2B /* FeedCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -241,7 +246,6 @@
 			children = (
 				E1799BF42AF4BB0000A69A33 /* HomeViewController.swift */,
 				000B41482B18B1120068FC78 /* HomeTableViewCell.swift */,
-				00FD44652B1E175500534B2B /* FeedViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +362,50 @@
 				004D73A72B0A47DC00D8F96E /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		006AAB152B255256006C36C6 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				006AAB192B25526A006C36C6 /* Model */,
+				006AAB182B255263006C36C6 /* Coordinator */,
+				006AAB172B255260006C36C6 /* ViewModel */,
+				006AAB162B25525D006C36C6 /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		006AAB162B25525D006C36C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				006AAB112B247AEA006C36C6 /* ProfileCollectionViewCell.swift */,
+				00FD44652B1E175500534B2B /* FeedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		006AAB172B255260006C36C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				006AAB0F2B23CC51006C36C6 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		006AAB182B255263006C36C6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				00FD44672B1E17B100534B2B /* FeedCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		006AAB192B25526A006C36C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				006AAB132B252DE3006C36C6 /* StudyMembers.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		00A10AA42AF650BF009DF4BC /* Login */ = {
@@ -570,6 +618,7 @@
 		E1799BF02AF4BAC900A69A33 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				006AAB152B255256006C36C6 /* Feed */,
 				000913E02B1CA06E000BCFFC /* ViewModel */,
 				000B414A2B18E46B0068FC78 /* Model */,
 				000B41472B18B0FC0068FC78 /* View */,
@@ -931,6 +980,7 @@
 				0043194A2B0B3E150031B1BF /* MyPageTabCoordinator.swift in Sources */,
 				E1F73B362AFA227F00C33DAF /* FilterCollectionViewCell.swift in Sources */,
 				000B414C2B18E4790068FC78 /* MyStudyModel.swift in Sources */,
+				006AAB142B252DE3006C36C6 /* StudyMembers.swift in Sources */,
 				00A10AAD2AF66B2C009DF4BC /* OnBoardingViewController.swift in Sources */,
 				0020956B2AF7849200B02DE4 /* NicknameModel.swift in Sources */,
 				77CC87CB2B0C789C00260A2C /* TodoCollectionViewCell.swift in Sources */,
@@ -946,7 +996,9 @@
 				003DB96B2AF9EDFC00903AF8 /* UIButton.swift in Sources */,
 				002095552AF7435A00B02DE4 /* LoginViewModel.swift in Sources */,
 				E10ADAA52B0747D800A286E3 /* CreateStudyStep2Coordinator.swift in Sources */,
+				006AAB122B247AEA006C36C6 /* ProfileCollectionViewCell.swift in Sources */,
 				00A10AB22AF6ED8A009DF4BC /* AuthService.swift in Sources */,
+				006AAB102B23CC51006C36C6 /* FeedViewModel.swift in Sources */,
 				E16C92AE2AE686A900141952 /* iOS_201.xcdatamodeld in Sources */,
 				E1799BF92AF4BB1F00A69A33 /* StudyListViewController.swift in Sources */,
 				E16C92A42AE686A900141952 /* AppDelegate.swift in Sources */,

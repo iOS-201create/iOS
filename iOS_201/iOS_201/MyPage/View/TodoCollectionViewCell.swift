@@ -29,7 +29,6 @@ class TodoCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupUI() {
-        self.backgroundColor = .red
         self.addSubview(myImageView)
         myImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
