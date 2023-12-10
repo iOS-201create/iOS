@@ -57,11 +57,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     //TODO: 차후 준용님이 말해주신 부분처럼 웹뷰?? 로 변경하겠습니다!
     /// code를 받을시, onBoardingView로 화면은 전환합니다.
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        debugPrint(URLContexts)
+//        print(URLContexts)
         if let url = URLContexts.first?.url {
             if url.absoluteString.starts(with: "example://") {
                 if let code = url.absoluteString.split(separator: "=").last.map({ String($0) }) {
-                    coordinator?.goToOnBoardingView()
                     
+                    coordinator?.goToOnBoardingView()
                     AuthService.share.requestToken(with: code)
                 }
             }

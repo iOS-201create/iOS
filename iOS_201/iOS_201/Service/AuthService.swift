@@ -6,7 +6,7 @@ import Alamofire
 
 class AuthService {
     static let share = AuthService()
-    
+
     private let clientId = "bcb21de82a95323a376f"
     
     /// 사용할 인증 모델
@@ -14,10 +14,12 @@ class AuthService {
     
     func requestGithubCode(completion: @escaping (Bool) -> Void) {
         let scope = "repo,user"
+        
         let urlString = "https://github.com/login/oauth/authorize?client_id=\(clientId)&scope=\(scope)"
         
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
+            
             completion(true)
         }else{
             completion(false)
@@ -33,7 +35,8 @@ class AuthService {
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers
-        ).responseDecodable(of: AuthModel.self) { [weak self] response in
+        )
+        .responseDecodable(of: AuthModel.self) { [weak self] response in
             switch response.result {
             case .success(let result):
                 self?.authModel = result
@@ -43,6 +46,8 @@ class AuthService {
                 print(error.localizedDescription)
             }
         }
+        
+        
     }
     
     //TODO: 차후 Keychain으로 변경할 예정입니다!
